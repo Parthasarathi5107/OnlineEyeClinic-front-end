@@ -16,6 +16,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { LinkComponent } from './appointment/link/link.component';
 
 
 const appRoutes:Routes=[
@@ -37,12 +38,12 @@ const appRoutes:Routes=[
     SpectaclesComponent,
     UserComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LinkComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    AppRoutingModule,
     FormsModule,
     HttpClientModule
   ],

@@ -1,3 +1,4 @@
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Appointment } from './../details/appointment';
 
 import { AppointmentService } from './../service/appointment.service';
@@ -11,12 +12,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppointmentComponent implements OnInit {
 
-  constructor(private appointmentService:AppointmentService){
+  constructor(private appointmentService:AppointmentService,private router: RouterModule,private route:ActivatedRoute){
     this.getAllAppointments;
   }
+
+  appointment:Appointment=new Appointment();
   appointments !:Appointment[];
 
   ngOnInit(): void {
+    this.appointment.patient.userId = this.route.snapshot.params['id'];
+    this.appointment.doctor.userId = this.route.snapshot.params['id'];
+    this.appointment.appointmentDate=this.route.snapshot.params['date'];
+    this.appointment.appointmentTime=this.route.snapshot.params['time'];
   }
 
   getAllAppointments()
@@ -31,6 +38,20 @@ export class AppointmentComponent implements OnInit {
  
  ); 
 
+}
+
+onSubmit()
+{
+    this.appointmentService.bookAppointment(this.appointment).subscribe(data=>{
+    console.log(data);
+    alert("Appointment has created successfully"); 
+  },
+  error=>console.log(error));
+}
+
+goBack()
+{
+  this.route.url;
 }
 
 }
