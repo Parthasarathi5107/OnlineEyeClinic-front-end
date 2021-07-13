@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -13,11 +14,15 @@ import { SpectaclesComponent } from './spectacles/spectacles.component';
 import { UserComponent } from './user/user.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+
 
 const appRoutes:Routes=[
 
-  {path:'',redirectTo:'login',pathMatch:'full'}
+  {path:'',redirectTo:'login',pathMatch:'full'},
+  {path:'appointment',component : AppointmentComponent},
+  {path:'report',component : ReportComponent},
 ];
 
 @NgModule({
@@ -30,7 +35,9 @@ const appRoutes:Routes=[
     ReportComponent,
     TestComponent,
     SpectaclesComponent,
-    UserComponent
+    UserComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
