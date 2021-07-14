@@ -21,6 +21,9 @@ import { ContactComponent } from './contact/contact.component';
 import { BookappointmentComponent } from './appointment/bookappointment/bookappointment.component';
 import { CancelComponent } from './appointment/cancel/cancel.component';
 import { RescheduleComponent } from './appointment/reschedule/reschedule.component';
+import { ViewreportComponent } from './report/viewreport/viewreport.component';
+import { AddreportComponent } from './report/addreport/addreport.component';
+import { UpdatereportComponent } from './report/updatereport/updatereport.component';
 
 
 
@@ -56,7 +59,10 @@ const appRoutes:Routes=[
     ContactComponent,
     BookappointmentComponent,
     CancelComponent,
-    RescheduleComponent
+    RescheduleComponent,
+    ViewreportComponent,
+    AddreportComponent,
+    UpdatereportComponent
   ],
   imports: [
     BrowserModule,
