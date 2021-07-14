@@ -21,18 +21,11 @@ import { ContactComponent } from './contact/contact.component';
 import { BookappointmentComponent } from './appointment/bookappointment/bookappointment.component';
 import { CancelComponent } from './appointment/cancel/cancel.component';
 import { RescheduleComponent } from './appointment/reschedule/reschedule.component';
-<<<<<<< HEAD
 import { ViewreportComponent } from './report/viewreport/viewreport.component';
 import { AddreportComponent } from './report/addreport/addreport.component';
 import { UpdatereportComponent } from './report/updatereport/updatereport.component';
-=======
-import { AddreportComponent } from './report/addreport/addreport.component';
-import { ViewreportComponent } from './report/viewreport/viewreport.component';
-import { UpdatereportComponent } from './report/updatereport/updatereport.component';
-import { TestlinkComponent } from './test/testlink/testlink.component';
 import { ReportlinkComponent } from './report/reportlink/reportlink.component';
->>>>>>> 8cfc62933f4af4e72796b7da7f234b850bae7306
-
+import { TestlinkComponent } from './test/testlink/testlink.component';
 
 
 const appRoutes:Routes=[
@@ -70,17 +63,15 @@ const appRoutes:Routes=[
     BookappointmentComponent,
     CancelComponent,
     RescheduleComponent,
-<<<<<<< HEAD
     ViewreportComponent,
     AddreportComponent,
-    UpdatereportComponent
-=======
+    UpdatereportComponent,
     AddreportComponent,
     ViewreportComponent,
     UpdatereportComponent,
     TestlinkComponent,
     ReportlinkComponent
->>>>>>> 8cfc62933f4af4e72796b7da7f234b850bae7306
+
   ],
   imports: [
     BrowserModule,
