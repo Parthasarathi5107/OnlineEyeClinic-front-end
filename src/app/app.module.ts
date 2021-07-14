@@ -66,9 +66,6 @@ const appRoutes:Routes=[
     ViewreportComponent,
     AddreportComponent,
     UpdatereportComponent,
-    AddreportComponent,
-    ViewreportComponent,
-    UpdatereportComponent,
     TestlinkComponent,
     ReportlinkComponent
 
