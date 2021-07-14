@@ -1,4 +1,4 @@
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 import { Appointment } from './../details/appointment';
 
 import { AppointmentService } from './../service/appointment.service';
@@ -12,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppointmentComponent implements OnInit {
 
-  constructor(private appointmentService:AppointmentService,private router: RouterModule,private route:ActivatedRoute){
+  constructor(private appointmentService:AppointmentService,private router: Router,private route:ActivatedRoute){
     this.getAllAppointments;
   }
 

@@ -1,0 +1,45 @@
+<div >
+    <h1 > Book Appointment </h1>
+    <!-- <div class="middlepane" ></div> -->
+    <form name="form" (ngSubmit)="addForm.form.valid && onSubmit()" #addForm="ngForm" novalidate>
+
+        <div class="form-group">
+            <label for="appointmentDate">Appointment Date<span>*</span></label>
+
+            <input type="date" class="form-control" [(ngModel)]="appointment.appointmentDate" #appointmentDate="ngModel" required>
+        </div>
+
+
+        <div class="form-group">
+            <label for="appointmentTime">Appointment Time<span>*</span></label>
+
+            <input type="time" class="form-control" [(ngModel)]="appointment.appointmentTime" #appointmentTime="ngModel"
+                required>
+            <div class="invalid-feedback">
+                <div>Time is required</div>
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+            <label> Patient Id <span>*</span></label>
+            <input  type="number" class ="form-control" id = "pId"
+                [(ngModel)] = "appointment.patient.userId" name = "pId">
+        </div>
+
+    
+        <div class="form-group">
+            <label for="doctorId">Doctor Id<span>*</span></label>
+            <input type="number" class="form-control" [(ngModel)]="appointment.doctor.userId" #doctorId="ngModel"
+                required>
+        </div>
+
+        
+    
+        <button  class = "btn btn-success  float-right" type ="submit">Book</button>
+        <button  class = "btn btn-success  float-left" type ="submit">Back</button>
+        
+    
+    </form>
+    </div>
