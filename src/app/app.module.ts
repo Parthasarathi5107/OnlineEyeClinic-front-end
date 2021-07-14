@@ -21,6 +21,11 @@ import { ContactComponent } from './contact/contact.component';
 import { BookappointmentComponent } from './appointment/bookappointment/bookappointment.component';
 import { CancelComponent } from './appointment/cancel/cancel.component';
 import { RescheduleComponent } from './appointment/reschedule/reschedule.component';
+import { AddreportComponent } from './report/addreport/addreport.component';
+import { ViewreportComponent } from './report/viewreport/viewreport.component';
+import { UpdatereportComponent } from './report/updatereport/updatereport.component';
+import { TestlinkComponent } from './test/testlink/testlink.component';
+import { ReportlinkComponent } from './report/reportlink/reportlink.component';
 
 
 
@@ -35,7 +40,9 @@ const appRoutes:Routes=[
   {path:'book',component: BookappointmentComponent},
   {path:'cancel',component: CancelComponent},
   {path:'reschedule',component: RescheduleComponent},
-  {path:'report',component: ReportComponent}
+  {path:'report',component: ReportComponent},
+  {path:'test',component: TestComponent},
+  {path:'viewreport',component:  ViewreportComponent},
 ];
 
 @NgModule({
@@ -56,7 +63,12 @@ const appRoutes:Routes=[
     ContactComponent,
     BookappointmentComponent,
     CancelComponent,
-    RescheduleComponent
+    RescheduleComponent,
+    AddreportComponent,
+    ViewreportComponent,
+    UpdatereportComponent,
+    TestlinkComponent,
+    ReportlinkComponent
   ],
   imports: [
     BrowserModule,
