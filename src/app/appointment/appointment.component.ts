@@ -13,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppointmentComponent implements OnInit {
 
   constructor(private appointmentService:AppointmentService,private router: Router,private route:ActivatedRoute){
-    this.getAllAppointments;
+    // this.getAllAppointments;
   }
 
   appointment:Appointment=new Appointment();
@@ -28,7 +28,7 @@ export class AppointmentComponent implements OnInit {
 
   getAllAppointments()
 {
- this.appointmentService.getAllAppointments().subscribe(data=>{
+ this.appointmentService.getAppointmentList().subscribe(data=>{
      this.appointments = data;
  },
  err=>
