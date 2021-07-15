@@ -27,6 +27,13 @@ import { UpdatereportComponent } from './report/updatereport/updatereport.compon
 import { ReportlinkComponent } from './report/reportlink/reportlink.component';
 import { TestlinkComponent } from './test/testlink/testlink.component';
 
+import { LoginComponent } from './login/login.component';
+import { DoctorActivityComponent } from './doctor-activity/doctor-activity.component';
+import { AddtestComponent } from './test/addtest/addtest.component';
+import { UpdatetestComponent } from './test/updatetest/updatetest.component';
+
+
+
 
 const appRoutes:Routes=[
 
@@ -41,7 +48,10 @@ const appRoutes:Routes=[
   {path:'reschedule',component: RescheduleComponent},
   {path:'report',component: ReportComponent},
   {path:'test',component: TestComponent},
-  {path:'viewreport',component:  ViewreportComponent},
+  {path:'viewreport',component:  ViewreportComponent}, 
+  {path:'docActivity',component: DoctorActivityComponent},
+  {path:'createtest',component: AddtestComponent},
+  {path:'addreport',component: AddreportComponent},
 ];
 
 @NgModule({
@@ -67,7 +77,11 @@ const appRoutes:Routes=[
     AddreportComponent,
     UpdatereportComponent,
     TestlinkComponent,
-    ReportlinkComponent
+    ReportlinkComponent,
+    LoginComponent,
+    DoctorActivityComponent,
+    AddtestComponent,
+    UpdatetestComponent
 
   ],
   imports: [

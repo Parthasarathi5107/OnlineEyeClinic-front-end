@@ -1,0 +1,51 @@
+
+    <div >
+    <h1 > Create Test </h1>
+    <!-- <div class="middlepane" ></div> -->
+    <form name="form" (ngSubmit)="addForm.form.valid && onSubmit()" #addForm="ngForm" novalidate>
+
+        <div class="form-group">
+            <label for="testName">Test Name<span>*</span></label>
+
+            <input type="text" class="form-control" [(ngModel)]="test.testName" #testName="ngModel" required>
+        </div>
+
+
+        <div class="form-group">
+            <label for="testType">Type of Test<span>*</span></label>
+
+            <input type="text" class="form-control" [(ngModel)]="test.testType" #testType="ngModel"
+                required>
+
+        </div>
+
+        <div class="form-group">
+            <label for="testDescription">Test Description<span>*</span></label>
+
+            <input type="text" class="form-control" [(ngModel)]="test.testDescription" #testDescription="ngModel"
+                required>
+
+        </div>
+
+        <div class="form-group">
+            <label for="testCost">Test Cost<span>*</span></label>
+
+            <input type="number" class="form-control" [(ngModel)]="test.testCost" #testCost="ngModel"
+                required>
+
+        </div>
+
+        <div class="form-group">
+            <label> Patient Id <span>*</span></label>
+            <input  type="number" class ="form-control" id = "pId"
+                [(ngModel)] = "test.patient.userId" name = "pId">
+        </div>
+
+        
+    
+        <button  class = "btn btn-success  float-right" type ="submit">Book</button>
+        <!-- <button  class = "btn btn-success  float-left" type ="submit">Back</button> -->
+        
+    
+    </form>
+    </div>
