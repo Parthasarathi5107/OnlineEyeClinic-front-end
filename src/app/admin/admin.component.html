@@ -1,4 +1,4 @@
-<hr/>
+<!-- <hr/>
 <table >
     <tr>
         <td><b>testId</b></td>
@@ -16,4 +16,45 @@
         <td>{{item.testCost}}</td>
         <td>{{item.patient}}</td>
     </tr>
-</table>
+</table> -->
+
+<div class="card">
+    <div class="card-title">
+        <h4>Admin Update Form</h4>
+    </div>
+    <div class="card-body">
+        <form novalidate #updateForm="ngForm">
+            <div class="form-group">
+                <label>userId : </label>
+                <input type="text" class="form-control" value="{{admin.userId}}"
+                [(ngModel)]= "admin.userId" name="userId" />
+            </div>
+            <div class="form-group">
+                <label>password : </label>
+                <input type="text" class="form-control" value="{{admin.password}}"
+                [(ngModel)]= "admin.password" name="password" />
+            </div>
+            <div class="form-group">
+                <label>userName: </label>
+                <input type="text" class="form-control" value="{{admin.userName}}"
+                [(ngModel)]= "admin.userName" name="userName" />
+            </div>
+            <div class="form-group">
+                <label>role: </label>
+                <input type="text" class="form-control" value="{{admin.role}}"
+                [(ngModel)]= "admin.role" name="role" />
+            </div>
+            <div class="form-group">
+                <label>email: </label>
+                <input type="text" class="form-control" value="{{admin.email}}"
+                [(ngModel)]= "admin.email" name="email" />
+            </div>
+            <div class="form-group">
+                <label>mobile: </label>
+                <input type="text" class="form-control" value="{{admin.mobile}}"
+                [(ngModel)]= "admin.mobile" name="mobile" />
+            </div>
+        </form>
+    </div>
+</div>
+<button type="button" class="btn btn-primary" (click)="update()">Confirm</button>

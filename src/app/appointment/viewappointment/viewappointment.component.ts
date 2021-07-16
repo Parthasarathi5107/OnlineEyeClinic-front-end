@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class ViewappointmentComponent implements OnInit {
 
   constructor(private appointmentService:AppointmentService) {
-    this.getAllAppointments;
+    // this.getAllAppointments;
    }
 
   appointments !:Appointment[];
@@ -19,17 +19,17 @@ export class ViewappointmentComponent implements OnInit {
   }
 
 
-  getAllAppointments()
-  {
-   this.appointmentService.getAppointmentList().subscribe(data=>{
-       this.appointments = data;
-   },
-   err=>
-   {
-     console.log(err.error);
-   }
+  // getAllAppointments()
+  // {
+  //  this.appointmentService.getAppointmentList().subscribe(data=>{
+  //      this.appointments = data;
+  //  },
+  //  err=>
+  //  {
+  //    console.log(err.error);
+  //  }
    
-   ); 
+  //  ); 
   
-  }
+  // }
 }

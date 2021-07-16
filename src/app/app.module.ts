@@ -54,11 +54,11 @@ const appRoutes:Routes=[
   {path:'docActivity',component: DoctorActivityComponent},
   {path:'createtest',component: AddtestComponent},
   {path:'addreport',component: AddreportComponent},
-<<<<<<< HEAD
-  {path:'login',component:LoginComponent}
-=======
+
+  {path:'login',component:LoginComponent},
+
   {path:'patient/:id',component: PatientComponent},
->>>>>>> 557c6d1586a4089dd802f4976fb340da89144431
+
 ];
 
 @NgModule({

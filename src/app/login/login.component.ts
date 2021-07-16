@@ -110,12 +110,12 @@ export class LoginComponent implements OnInit {
   //   this.showErrorMessage = false;
   // }
 
-<<<<<<< HEAD
-  onSubmit()
-  {
-    this.router.navigate(["patient"]);
-  }
-=======
+
+  // onSubmit()
+  // {
+  //   this.router.navigate(["patient"]);
+  // }
+
   
   onSubmit()
   {
@@ -141,5 +141,4 @@ export class LoginComponent implements OnInit {
   }
 
   
->>>>>>> 557c6d1586a4089dd802f4976fb340da89144431
 }
