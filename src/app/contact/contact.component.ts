@@ -14,7 +14,7 @@ export class ContactComponent implements OnInit {
 
   onSubmit()
   {
-    alert("Form submitted");
+    alert("form submitted");
   }
 
 }

@@ -1,5 +1,5 @@
-import { DoctorService } from './../../service/doctor.service';
-import { PatientService } from './../../service/patient.service';
+import { DoctorService } from '../service/doctor.service';
+import { PatientService } from '../service/patient.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -26,14 +26,16 @@ export class ForgotPasswordComponent implements OnInit {
 
   onSubmit()
   {
-    if (this.role == "patient")
-    {
-      this.patientService.getPatientByUsernameAndEmail(this.userName, this.email).subscribe(data =>{
-        this.user = data;
-        this.userExist = true;
-      },erorr =>{
-        this.showErrorMessage = true;
-      });
+    // if (this.role == "patient")
+    // {
+    //   this.patientService.getPatientByUsernameAndEmail(this.userName, this.email).subscribe(data =>{
+    //     this.user = data;
+    //     this.userExist = true;
+    //   },erorr =>{
+    //     this.showErrorMessage = true;
+    //   });
+
+    alert("Password reset link has been sent to entered mail...")
     }
     // else
     // {
@@ -44,6 +46,6 @@ export class ForgotPasswordComponent implements OnInit {
     //     this.showErrorMessage = true;
     //   });
     // }
-  }
+  // }
 
 }

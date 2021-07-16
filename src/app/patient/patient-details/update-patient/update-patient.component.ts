@@ -1,15 +1,14 @@
-import { PatientService } from './../service/patient.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Patient } from '../details/patient';
+import { Patient } from 'src/app/details/patient';
+import { PatientService } from 'src/app/service/patient.service';
 
 @Component({
-  selector: 'app-patient',
-  templateUrl: './patient.component.html',
-  styleUrls: ['./patient.component.css']
+  selector: 'app-update-patient',
+  templateUrl: './update-patient.component.html',
+  styleUrls: ['./update-patient.component.css']
 })
-export class PatientComponent implements OnInit {
-
+export class UpdatePatientComponent implements OnInit {
   patientId: number;
   patient: Patient;
 
@@ -26,19 +25,24 @@ export class PatientComponent implements OnInit {
       {
         console.log(data);
         this.patient = data;
-        console.log(this.patient)
+        
       }, error => console.log(error));
+  }
 
-    
-    
-    }
+  update()
+  {
+    this.patient.userId=this.patientId;
+        this.patient.role='patient';
+    this.patientService.updatePatient(this.patient).subscribe(data =>{
 
-    goDetails()
+      console.log(data);
+      this.patient = data;
+    });
+    this.back();
+  }
+
+  back()
   {
     this.router.navigate(['patient',this.patientId,'details']);
   }
-
-      
-  
-
 }

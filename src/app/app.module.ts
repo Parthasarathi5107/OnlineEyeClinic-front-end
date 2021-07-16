@@ -14,7 +14,6 @@ import { UserComponent } from './user/user.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { LinkComponent } from './appointment/link/link.component';
 import { ViewappointmentComponent } from './appointment/viewappointment/viewappointment.component';
 import { ContactComponent } from './contact/contact.component';
@@ -31,7 +30,10 @@ import { DoctorActivityComponent } from './doctor-activity/doctor-activity.compo
 import { AddtestComponent } from './test/addtest/addtest.component';
 import { UpdatetestComponent } from './test/updatetest/updatetest.component';
 import { RegisterComponent } from './register/register.component';
-import { ForgotPasswordComponent } from './login/forgot-password/forgot-password.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { PatientDetailsComponent } from './patient/patient-details/patient-details.component';
+import { UpdatePatientComponent } from './patient/patient-details/update-patient/update-patient.component';
+
 
 
 
@@ -43,7 +45,7 @@ const appRoutes:Routes=[
   {path:'view',component: ViewappointmentComponent},
   {path:'contact',component: ContactComponent},
   {path:'spec',component: SpectaclesComponent},
-  {path:'book/:id',component: BookappointmentComponent},
+  {path:'book',component: BookappointmentComponent},
   {path:'cancel',component: CancelComponent},
   {path:'reschedule',component: RescheduleComponent},
   {path:'report',component: ReportComponent},
@@ -52,11 +54,14 @@ const appRoutes:Routes=[
   {path:'docActivity',component: DoctorActivityComponent},
   {path:'createtest',component: AddtestComponent},
   {path:'addreport',component: AddreportComponent},
+
   {path:'patient/:id',component: PatientComponent},
   {path:'doctor/:id',component: DoctorComponent},
   {path:'login',component: LoginComponent},
   {path:'register',component: RegisterComponent},
   {path:'forget-password',component: ForgotPasswordComponent},
+  {path:'patient/:patientId/details',component: PatientDetailsComponent},
+  {path:'patient/:patientId/details/update',component: UpdatePatientComponent},
 ];
 
 @NgModule({
@@ -71,7 +76,6 @@ const appRoutes:Routes=[
     SpectaclesComponent,
     UserComponent,
     HeaderComponent,
-    FooterComponent,
     LinkComponent,
     ViewappointmentComponent,
     ContactComponent,
@@ -88,7 +92,9 @@ const appRoutes:Routes=[
     AddtestComponent,
     UpdatetestComponent,
     RegisterComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    PatientDetailsComponent,
+    UpdatePatientComponent
   ],
   imports: [
     BrowserModule,
