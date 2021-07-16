@@ -13,10 +13,12 @@ export class BookappointmentComponent implements OnInit {
   constructor(private appointmentService:AppointmentService,private router: Router,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.appointment.patient.userId = this.route.snapshot.params['id'];
-    this.appointment.doctor.userId = this.route.snapshot.params['id'];
+    console.log(this.appointment.patient);
     this.appointment.appointmentDate=this.route.snapshot.params['date'];
     this.appointment.appointmentTime=this.route.snapshot.params['time'];
+    this.appointment.patient.userId = this.route.snapshot.params['id'];
+    this.appointment.doctor.userId = this.route.snapshot.params['id'];
+    
   }
 
   appointment:Appointment=new Appointment();
@@ -29,6 +31,7 @@ export class BookappointmentComponent implements OnInit {
     alert("Appointment has created successfully"); 
   },
   error=>console.log(error));
+  
 }
 
 goBack()

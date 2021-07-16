@@ -1,21 +1,19 @@
-import { DoctorService } from './../service/doctor.service';
-import { Doctor } from './../details/doctor';
+import { DoctorService } from './../../service/doctor.service';
+import { Doctor } from './../../details/doctor';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-doctor',
-  templateUrl: './doctor.component.html',
-  styleUrls: ['./doctor.component.css']
+  selector: 'app-doctor-schedule',
+  templateUrl: './doctor-schedule.component.html',
+  styleUrls: ['./doctor-schedule.component.css']
 })
-export class DoctorComponent implements OnInit {
+export class DoctorScheduleComponent implements OnInit {
 
   constructor(private doctorService : DoctorService) { }
+ doctor !:Doctor[];
 
   ngOnInit(): void {
   }
-
-  doctor !:Doctor[];
-
 
   getAllDoctors()
   {
@@ -30,4 +28,5 @@ export class DoctorComponent implements OnInit {
    ); 
   
   }
+
 }

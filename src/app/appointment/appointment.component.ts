@@ -26,19 +26,19 @@ export class AppointmentComponent implements OnInit {
     this.appointment.appointmentTime=this.route.snapshot.params['time'];
   }
 
-//   getAllAppointments()
-// {
-//  this.appointmentService.getAppointmentList().subscribe(data=>{
-//      this.appointments = data;
-//  },
-//  err=>
-//  {
-//    console.log(err.error);
-//  }
+  getAllAppointments()
+{
+ this.appointmentService.getAllAppointments().subscribe(data=>{
+     this.appointments = data;
+ },
+ err=>
+ {
+   console.log(err.error);
+ }
  
-//  ); 
+ ); 
 
-// }
+ }
 
 onSubmit()
 {
