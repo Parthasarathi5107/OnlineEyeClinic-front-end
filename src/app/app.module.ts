@@ -31,9 +31,14 @@ import { LoginComponent } from './login/login.component';
 import { DoctorActivityComponent } from './doctor-activity/doctor-activity.component';
 import { AddtestComponent } from './test/addtest/addtest.component';
 import { UpdatetestComponent } from './test/updatetest/updatetest.component';
+<<<<<<< HEAD
 import { PatientheaderComponent } from './patient/patientheader/patientheader.component';
 import { DoctorheaderComponent } from './doctor/doctorheader/doctorheader.component';
 
+=======
+import { RegisterComponent } from './register/register.component';
+import { ForgotPasswordComponent } from './login/forgot-password/forgot-password.component';
+>>>>>>> 9abd8d51e55fad7c40e295cdf9ef0f78662acb0d
 
 
 
@@ -58,7 +63,14 @@ const appRoutes:Routes=[
   {path:'login',component:LoginComponent},
 
   {path:'patient/:id',component: PatientComponent},
+<<<<<<< HEAD
 
+=======
+  {path:'doctor/:id',component: DoctorComponent},
+  {path:'login',component: LoginComponent},
+  {path:'register',component: RegisterComponent},
+  {path:'forget-password',component: ForgotPasswordComponent},
+>>>>>>> 9abd8d51e55fad7c40e295cdf9ef0f78662acb0d
 ];
 
 @NgModule({
@@ -89,9 +101,14 @@ const appRoutes:Routes=[
     DoctorActivityComponent,
     AddtestComponent,
     UpdatetestComponent,
+<<<<<<< HEAD
     PatientheaderComponent,
     DoctorheaderComponent
 
+=======
+    RegisterComponent,
+    ForgotPasswordComponent
+>>>>>>> 9abd8d51e55fad7c40e295cdf9ef0f78662acb0d
   ],
   imports: [
     BrowserModule,
