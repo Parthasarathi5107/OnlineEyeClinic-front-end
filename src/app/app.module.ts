@@ -12,7 +12,7 @@ import { TestComponent } from './test/test.component';
 import { SpectaclesComponent } from './spectacles/spectacles.component';
 import { UserComponent } from './user/user.component';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LinkComponent } from './appointment/link/link.component';
@@ -40,12 +40,12 @@ import { DoctorheaderComponent } from './doctor/doctorheader/doctorheader.compon
 const appRoutes:Routes=[
 
   {path:'',redirectTo:'login',pathMatch:'full'},
-  {path:'appointment',component : AppointmentComponent},
+  {path:'appointment/:id',component : AppointmentComponent},
   {path:'report',component : ReportComponent},
   {path:'view',component: ViewappointmentComponent},
   {path:'contact',component: ContactComponent},
   {path:'spec',component: SpectaclesComponent},
-  {path:'book',component: BookappointmentComponent},
+  {path:'book/:id',component: BookappointmentComponent},
   {path:'cancel',component: CancelComponent},
   {path:'reschedule',component: RescheduleComponent},
   {path:'report',component: ReportComponent},
@@ -54,7 +54,11 @@ const appRoutes:Routes=[
   {path:'docActivity',component: DoctorActivityComponent},
   {path:'createtest',component: AddtestComponent},
   {path:'addreport',component: AddreportComponent},
+<<<<<<< HEAD
   {path:'login',component:LoginComponent}
+=======
+  {path:'patient/:id',component: PatientComponent},
+>>>>>>> 557c6d1586a4089dd802f4976fb340da89144431
 ];
 
 @NgModule({
@@ -93,6 +97,7 @@ const appRoutes:Routes=[
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

@@ -17,5 +17,9 @@ export class Patient extends User{
         this.address=address;
     }
 
+    // constructor(){
+    //     super();
+    // }
+
 }
 
