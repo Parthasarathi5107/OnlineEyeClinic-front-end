@@ -31,6 +31,8 @@ import { LoginComponent } from './login/login.component';
 import { DoctorActivityComponent } from './doctor-activity/doctor-activity.component';
 import { AddtestComponent } from './test/addtest/addtest.component';
 import { UpdatetestComponent } from './test/updatetest/updatetest.component';
+import { PatientheaderComponent } from './patient/patientheader/patientheader.component';
+import { DoctorheaderComponent } from './doctor/doctorheader/doctorheader.component';
 
 
 
@@ -52,6 +54,7 @@ const appRoutes:Routes=[
   {path:'docActivity',component: DoctorActivityComponent},
   {path:'createtest',component: AddtestComponent},
   {path:'addreport',component: AddreportComponent},
+  {path:'login',component:LoginComponent}
 ];
 
 @NgModule({
@@ -81,7 +84,9 @@ const appRoutes:Routes=[
     LoginComponent,
     DoctorActivityComponent,
     AddtestComponent,
-    UpdatetestComponent
+    UpdatetestComponent,
+    PatientheaderComponent,
+    DoctorheaderComponent
 
   ],
   imports: [
