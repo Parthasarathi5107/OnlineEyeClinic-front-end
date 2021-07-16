@@ -34,9 +34,9 @@ export class PatientService {
     return this.http.get(`${this.viewById_endpoint}/${id}`);
   }
 
-  updatePatient(id: number, value: any): Observable<any>
+  updatePatient(patient:Patient): Observable<any>
   {
-    return this.http.put(`${this.baseUrl}/${id}`, value);
+    return this.http.put(`${this.baseUrl}`, patient);
   }
 
   getPatientByUsernameAndEmail(patientName: string, patientEmail: string): Observable<any>

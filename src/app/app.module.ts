@@ -14,7 +14,6 @@ import { UserComponent } from './user/user.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { LinkComponent } from './appointment/link/link.component';
 import { ViewappointmentComponent } from './appointment/viewappointment/viewappointment.component';
 import { ContactComponent } from './contact/contact.component';
@@ -32,8 +31,14 @@ import { DoctorActivityComponent } from './doctor/doctor-activity/doctor-activit
 import { AddtestComponent } from './test/addtest/addtest.component';
 import { UpdatetestComponent } from './test/updatetest/updatetest.component';
 import { RegisterComponent } from './register/register.component';
+<<<<<<< HEAD
 import { ForgotPasswordComponent } from './login/forgot-password/forgot-password.component';
 import { DoctorScheduleComponent } from './doctor/doctor-schedule/doctor-schedule.component';
+=======
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { PatientDetailsComponent } from './patient/patient-details/patient-details.component';
+import { UpdatePatientComponent } from './patient/patient-details/update-patient/update-patient.component';
+>>>>>>> 181b55a86a4f5b59b0c7ea35c9a81fc6b1034084
 
 
 
@@ -56,15 +61,23 @@ const appRoutes:Routes=[
   {path:'createtest',component: AddtestComponent},
   {path:'addreport',component: AddreportComponent},
 
+<<<<<<< HEAD
   {path:'login',component:LoginComponent},
 
+=======
+>>>>>>> 181b55a86a4f5b59b0c7ea35c9a81fc6b1034084
   {path:'patient/:id',component: PatientComponent},
   {path:'doctor/:id',component: DoctorComponent},
   {path:'login',component: LoginComponent},
   {path:'register',component: RegisterComponent},
   {path:'forget-password',component: ForgotPasswordComponent},
+<<<<<<< HEAD
   {path:'schedule',component: DoctorScheduleComponent},
 
+=======
+  {path:'patient/:patientId/details',component: PatientDetailsComponent},
+  {path:'patient/:patientId/details/update',component: UpdatePatientComponent},
+>>>>>>> 181b55a86a4f5b59b0c7ea35c9a81fc6b1034084
 ];
 
 @NgModule({
@@ -79,7 +92,6 @@ const appRoutes:Routes=[
     SpectaclesComponent,
     UserComponent,
     HeaderComponent,
-    FooterComponent,
     LinkComponent,
     ViewappointmentComponent,
     ContactComponent,
@@ -97,8 +109,13 @@ const appRoutes:Routes=[
     UpdatetestComponent,
     RegisterComponent,
     ForgotPasswordComponent,
+<<<<<<< HEAD
     DoctorScheduleComponent
 
+=======
+    PatientDetailsComponent,
+    UpdatePatientComponent
+>>>>>>> 181b55a86a4f5b59b0c7ea35c9a81fc6b1034084
   ],
   imports: [
     BrowserModule,

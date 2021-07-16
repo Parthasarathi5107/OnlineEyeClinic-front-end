@@ -1,9 +1,11 @@
-
+<div class="card-title">
+  <h2>Hi {{patient.userName}} , welcome to your portal</h2>
+</div>
 <table>
     <tr>
-      <td><a routerLink="/contact us">Contact Us</a></td>
-      <td><a routerLink="/appointment/:id">Book Appointment</a></td>
-      <td><a routerLink="/report">Reports</a></td>
+      <td><a routerLink="/patient/{{patient.userId}}/details">My Account</a></td>
+      <td><a routerLink="/appointment/{{patient.userId}}">Book Appointment</a></td>
+      <td><a routerLink="/report/{{patient.userId}}">Reports</a></td>
       <td><a routerLink="/Video Consultation App">Video Consultation App</a></td>
     </tr>
   </table>
