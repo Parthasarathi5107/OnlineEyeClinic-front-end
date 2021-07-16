@@ -1,3 +1,4 @@
+import { UserService } from './../service/user.service';
 import { Admin } from './../details/admin';
 import { Doctor } from './../details/doctor';
 import { Patient } from './../details/patient';
@@ -32,7 +33,7 @@ export class LoginComponent implements OnInit {
 
   showErrorMessage = false;
 
-  constructor(private patientService: PatientService, private router: Router, private doctorService: DoctorService) { }
+  constructor(private userService: UserService, private router: Router, private doctorService: DoctorService) { }
 
   ngOnInit(): void {
     this.userId = new FormControl('', Validators.required);
@@ -113,16 +114,30 @@ export class LoginComponent implements OnInit {
   
   onSubmit()
   {
-    if (this.role.value == "patient")
+    if (this.role.value == "patient"){
       this.patientLogin(this.loginForm.value);
-      console.log(this.loginForm.value)
-    // else
-      // this.doctorLogin(this.loginForm.value);
+      console.log(this.loginForm.value);}
+    else
+      this.doctorLogin(this.loginForm.value);
   } 
+
+  doctorLogin(doctor: Doctor)
+  {
+    this.userService.getLogin(doctor)
+    .subscribe(data => {
+      console.log("success");
+      this.currentDoctor=doctor;
+      this.router.navigate(['doctor',this.currentDoctor.userId]);
+    },
+    error => console.log(error));
+
+    console.log(this.loginForm.value)
+    console.log("failed")
+  }
 
   patientLogin(patient: Patient)
   {
-    this.patientService.getLogin(patient)
+    this.userService.getLogin(patient)
     .subscribe(data => {
       console.log("success");
       this.currentPatient=patient;
@@ -133,6 +148,5 @@ export class LoginComponent implements OnInit {
     console.log(this.loginForm.value)
     console.log("failed")
   }
-
   
 }

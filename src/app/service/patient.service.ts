@@ -12,9 +12,8 @@ export class PatientService {
   private baseUrl = 'http://localhost:9999/patient';
   private addPatient_endpoint = this.baseUrl+'/add';
   private viewAllPatients_endpoint = this.baseUrl+'/viewAll';
-  private patientLogin_endpoint = 'http://localhost:9999/users/viewAll';
-  private Login_endpoint = 'http://localhost:9999/users/signin';
   private viewById_endpoint = this.baseUrl+'/view';
+  private viewByNameAndEmail_endpoint = this.baseUrl+'/viewByName';
   
 
   constructor(private http: HttpClient) { }
@@ -26,6 +25,7 @@ export class PatientService {
 
   addPatient(patient: Patient): Observable<any>
   {
+    patient.role='patient';
     return this.http.post(`${this.addPatient_endpoint}`, patient);
   }
 
@@ -39,12 +39,10 @@ export class PatientService {
     return this.http.put(`${this.baseUrl}/${id}`, value);
   }
 
-  getUsersList(): Observable<any>
+  getPatientByUsernameAndEmail(patientName: string, patientEmail: string): Observable<any>
   {
-    return this.http.get(`${this.patientLogin_endpoint}`);
+    return this.http.get(`${this.baseUrl}/${patientName}/${patientEmail}`);
   }
-  getLogin(user:User): Observable<any>
-  {
-    return this.http.post(`${this.Login_endpoint}`,user);
-  }
+
+  
 }

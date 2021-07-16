@@ -30,6 +30,8 @@ import { LoginComponent } from './login/login.component';
 import { DoctorActivityComponent } from './doctor-activity/doctor-activity.component';
 import { AddtestComponent } from './test/addtest/addtest.component';
 import { UpdatetestComponent } from './test/updatetest/updatetest.component';
+import { RegisterComponent } from './register/register.component';
+import { ForgotPasswordComponent } from './login/forgot-password/forgot-password.component';
 
 
 
@@ -51,6 +53,10 @@ const appRoutes:Routes=[
   {path:'createtest',component: AddtestComponent},
   {path:'addreport',component: AddreportComponent},
   {path:'patient/:id',component: PatientComponent},
+  {path:'doctor/:id',component: DoctorComponent},
+  {path:'login',component: LoginComponent},
+  {path:'register',component: RegisterComponent},
+  {path:'forget-password',component: ForgotPasswordComponent},
 ];
 
 @NgModule({
@@ -80,7 +86,9 @@ const appRoutes:Routes=[
     LoginComponent,
     DoctorActivityComponent,
     AddtestComponent,
-    UpdatetestComponent
+    UpdatetestComponent,
+    RegisterComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
