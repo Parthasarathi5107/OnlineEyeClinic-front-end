@@ -12,4 +12,6 @@ export class User {
         this.userName = userName;
         this.role = role;
     }
+
+    // constructor(){}
 }

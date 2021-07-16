@@ -12,7 +12,7 @@ import { TestComponent } from './test/test.component';
 import { SpectaclesComponent } from './spectacles/spectacles.component';
 import { UserComponent } from './user/user.component';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LinkComponent } from './appointment/link/link.component';
@@ -36,12 +36,12 @@ import { UpdatetestComponent } from './test/updatetest/updatetest.component';
 const appRoutes:Routes=[
 
   {path:'',redirectTo:'login',pathMatch:'full'},
-  {path:'appointment',component : AppointmentComponent},
+  {path:'appointment/:id',component : AppointmentComponent},
   {path:'report',component : ReportComponent},
   {path:'view',component: ViewappointmentComponent},
   {path:'contact',component: ContactComponent},
   {path:'spec',component: SpectaclesComponent},
-  {path:'book',component: BookappointmentComponent},
+  {path:'book/:id',component: BookappointmentComponent},
   {path:'cancel',component: CancelComponent},
   {path:'reschedule',component: RescheduleComponent},
   {path:'report',component: ReportComponent},
@@ -50,6 +50,7 @@ const appRoutes:Routes=[
   {path:'docActivity',component: DoctorActivityComponent},
   {path:'createtest',component: AddtestComponent},
   {path:'addreport',component: AddreportComponent},
+  {path:'patient/:id',component: PatientComponent},
 ];
 
 @NgModule({
@@ -85,6 +86,7 @@ const appRoutes:Routes=[
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],
