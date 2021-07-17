@@ -14,6 +14,7 @@ export class AddspectaclesComponent implements OnInit {
 
   registerForm: FormGroup;
 
+  spectaclesId: FormControl;
   spectaclesModel: FormControl;
   spectaclesDescription: FormControl;
   spectaclesRating: FormControl;
@@ -26,6 +27,7 @@ export class AddspectaclesComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.spectaclesId = new FormControl('', [Validators.required]);
     this.spectaclesModel = new FormControl('', [Validators.required, Validators.minLength(3),Validators.max(20)]);
     this.spectaclesDescription = new FormControl('', [Validators.required]);
     this.spectaclesRating = new FormControl('', [Validators.required, Validators.min(1), Validators.max(5)]);
@@ -34,6 +36,7 @@ export class AddspectaclesComponent implements OnInit {
 
     this.registerForm = new FormGroup(
       {
+        'spectaclesId': this.spectaclesId,
         'spectaclesModel': this.spectaclesModel,
         'spectaclesDescription': this.spectaclesDescription,
         'spectaclesRating': this.spectaclesRating,

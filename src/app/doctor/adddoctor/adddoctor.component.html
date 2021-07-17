@@ -1,0 +1,82 @@
+<div class="card">
+    <div class="card-body">
+        <h4>Doctor Form</h4>
+        <div class="alert alert-info alert-dismissible " role="alert" *ngIf="formSubmitted">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              <span class="sr-only">Close</span>
+            </button>
+            <strong>Added doctor successfully! </strong><a routerLink="/managedoctor">Back to Login page</a>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form [formGroup]="registerForm" novalidate >
+                    <div class="form-group">
+                        <label>Name </label>
+                        <input type="text" class="form-control" formControlName="userName" 
+                        [ngClass]="{'is-invalid':userName.errors && (userName.touched || userName.dirty), 'is-valid': userName.valid}" />
+                        <div class="invalid-feedback">
+                            <strong *ngIf="userName.errors?.required">Name is required.</strong>
+                                <strong *ngIf="userName.errors?.pattern">Enter a valid User Name.Eg: Ram</strong>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Consultation Time </label>
+                        <input type="time" class="form-control" formControlName="doctorConsultationTime" 
+                        [ngClass]="{'is-invalid':doctorConsultationTime.errors && (doctorConsultationTime.touched || doctorConsultationTime.dirty), 'is-valid': doctorConsultationTime.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>Consultation time is required.</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Mobile Number </label>
+                        <input type="text" class="form-control" formControlName="doctorMobile" 
+                        [ngClass]="{'is-invalid':doctorMobile.errors && (doctorMobile.touched || doctorMobile.dirty), 'is-valid': doctorMobile.valid}" />
+                        <div class="invalid-feedback">
+                                <strong *ngIf="doctorMobile.errors?.required">Mobile number is required.</strong>
+                                <strong *ngIf="doctorMobile.errors?.pattern">Enter a valid mobile number.</strong>
+                            </div>
+                        </div>
+                    
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" class="form-control" formControlName="doctorEmail" 
+                        [ngClass]="{'is-invalid':doctorEmail.errors && (doctorEmail.touched || doctorEmail.dirty), 'is-valid': doctorEmail.valid}" />
+                        <div class="invalid-feedback">
+                            <strong *ngIf="doctorEmail.errors?.required">Email is required.</strong>
+                                <strong *ngIf="doctorEmail.errors?.Email">Enter a valid Email Id.</strong>
+                        </div>
+                    </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <input type="text" class="form-control" formControlName="address" 
+                            [ngClass]="{'is-invalid':address.errors && (address.touched || address.dirty), 'is-valid': address.valid}" />
+                            <div class="invalid-feedback">
+                                <strong>Address is required.</strong>
+                            </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="text" class="form-control" formControlName="password" 
+                        [ngClass]="{'is-invalid': password.errors && (password.touched || password.dirty), 'is-valid': password.valid}" />
+                        <div class="invalid-feedback">
+                            <strong *ngIf="password.errors?.required">Password is required.</strong>
+                            <strong *ngIf="password.errors?.minlength">Password length must be greater than {{password.errors?.minlength.requiredLength}} characters.</strong>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Register</button>
+                    <button class="btn btn-default" (click)="registerForm.reset()">Reset</button>
+                    <a routerLink="/managedoctor" class="btn btn-link">Cancel</a>
+
+                </form> 
+             </div>
+        </div>
+    </div>
+</div>
+
+

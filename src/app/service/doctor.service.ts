@@ -29,6 +29,7 @@ export class DoctorService {
 
   addDoctor(doctor: Doctor): Observable<any>
   {
+    doctor.role='doctor';
     return this.http.post(`${this.addDoctor_endpoint}`, doctor);
   }
 
