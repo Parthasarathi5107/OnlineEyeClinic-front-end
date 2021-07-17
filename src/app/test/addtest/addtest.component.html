@@ -1,51 +1,72 @@
 
-    <div >
-    <h1 > Create Test </h1>
-    <!-- <div class="middlepane" ></div> -->
-    <form name="form" (ngSubmit)="addForm.form.valid && onSubmit()" #addForm="ngForm" novalidate>
-
-        <div class="form-group">
-            <label for="testName">Test Name<span>*</span></label>
-
-            <input type="text" class="form-control" [(ngModel)]="test.testName" #testName="ngModel" required>
+<div class="card">
+    <div class="card-body">
+        <h4>Test Form</h4>
+        <div class="alert alert-info alert-dismissible " role="alert" *ngIf="formSubmitted">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              <span class="sr-only">Close</span>
+            </button>
+            <strong>Test created successfully! </strong><a routerLink="/admin">Go back to admin page</a>
         </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form [formGroup]="registerForm" novalidate >
+                    <div class="form-group">
+                        <label>Name </label>
+                        <input type="text" class="form-control" formControlName="testName" 
+                        [ngClass]="{'is-invalid':testName.errors && (testName.touched || testName.dirty), 'is-valid': testName.valid}" />
+                    </div>
+                  
+
+                    <div class="form-group">
+                        <label>Test Type</label>
+                        <input type="text" class="form-control" formControlName="testType" 
+                        [ngClass]="{'is-invalid':testType.errors && (testType.touched || testType.dirty), 'is-valid': testType.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>Test type is required.</strong>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" class="form-control" formControlName="testDescription" 
+                        [ngClass]="{'is-invalid':testDescription.errors && (testDescription.touched || testDescription.dirty), 'is-valid': testDescription.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>Description is required.</strong>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Cost</label>
+                        <input type="number" class="form-control" formControlName="testCost" 
+                        [ngClass]="{'is-invalid':testCost.errors && (testCost.touched || testCost.dirty), 'is-valid':testCost.valid}" />
+                        <div class="invalid-feedback">
+                            <strong *ngIf="testCost.errors?.required">testCost is required.</strong>
+                                <strong *ngIf="testCost.errors?.min">Enter a valid cost.</strong>
+                        </div>
+                    </div>
 
 
-        <div class="form-group">
-            <label for="testType">Type of Test<span>*</span></label>
+                    <div class="form-group">
+                        <label>Patient Id </label>
+                        <input type="text" class="form-control" formControlName="patient" 
+                        [ngClass]="{'is-invalid':patient.errors && (patient.touched || patient.dirty), 'is-valid': patient.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>patient id is required.</strong>
+                        </div>
+                    </div>
+                   
 
-            <input type="text" class="form-control" [(ngModel)]="test.testType" #testType="ngModel"
-                required>
-
-        </div>
-
-        <div class="form-group">
-            <label for="testDescription">Test Description<span>*</span></label>
-
-            <input type="text" class="form-control" [(ngModel)]="test.testDescription" #testDescription="ngModel"
-                required>
-
-        </div>
-
-        <div class="form-group">
-            <label for="testCost">Test Cost<span>*</span></label>
-
-            <input type="number" class="form-control" [(ngModel)]="test.testCost" #testCost="ngModel"
-                required>
-
-        </div>
-
-        <div class="form-group">
-            <label> Patient Id <span>*</span></label>
-            <input  type="number" class ="form-control" id = "pId"
-                [(ngModel)] = "test.patient.userId" name = "pId">
-        </div>
-
-        
     
-        <button  class = "btn btn-success  float-right" type ="submit">Book</button>
-        <!-- <button  class = "btn btn-success  float-left" type ="submit">Back</button> -->
-        
-    
-    </form>
+                    
+                    
+                    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Add</button>
+                    <button class="btn btn-default" (click)="registerForm.reset()">Reset</button>
+                    <a routerLink="/login" class="btn btn-link">Cancel</a>
+
+                </form> 
+             </div>
+        </div>
     </div>
+</div>

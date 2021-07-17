@@ -18,7 +18,7 @@ export class ReportService {
   private viewByDate_endpoint = this.baseUrl+'/viewByDate/{date}';
   private viewSpectacles_endpoint = this.baseUrl+'/spectacles';
 
-  private viewReportByPatientId_endpoint = this.baseUrl+'/viewById/{patientId}';
+  private viewReportByPatientId_endpoint = this.baseUrl+'/viewById';
 
 
   addReport(report: Report): Observable<any>

@@ -8,12 +8,12 @@
         <td><b>Cost</b></td>
         <td><b>PatientId</b></td>
     </tr>
-     <tr *ngFor="let item of currentPatienttests"> 
+     <tr *ngFor="let item of allTests"> 
         <td>{{item.testId}}</td>
         <td><a >{{item.testName}}</a></td>
         <td>{{item.testType}}</td>
         <td>{{item.testDescription}}</td>
-        <td>{{item.testCost}}</td>
+        <td>{{item.testCost|currency:"INR":"symbol"}}</td>
         <td>{{item.patient}}</td>
 
     </tr> 

@@ -1,9 +1,4 @@
 
-<p>viewreport works!</p>
-=======
-Enter test Id <input type="number" #testId>
------validate test Id---------
-
 <table >
     <tr>
         <td><b>Id</b></td>
@@ -12,17 +7,19 @@ Enter test Id <input type="number" #testId>
         <td><b>visual Acuity</b></td>
         <td><b>visual Acuity Near</b></td>
         <td><b>visual Acuity Distance </b></td>
-        <td><b>Test Type</b></td>
-        <td><b>PatientId</b></td>
+        <td><b>Test Id</b></td>
+        <td><b>Patient Id</b></td>
     </tr>
-    <!-- <tr *ngFor="let item of laptops">
-        <td>{{item.productId}}</td>
-        <td><a routerLink="/view/{{item.productName}}">{{item.productName}}</a></td>
-        <td>{{item.productCost}}</td>
-        <td>{{item.productRating}}</td>
-        <td>{{item.category}}</td>
-        <td> <button (click)="addToCart(item)" >Add To Cart</button> </td>
-    </tr> -->
+    <tr *ngFor="let item of allReport">
+        <td>{{item.reportId}}</td>
+        <td>{{item.dateOfReport}}</td>
+        <td>{{item.descriptionOfReport}}</td>
+        <td>{{item.visualAcuity}}</td>
+        <td>{{item.visualAcuityNear}}</td>
+        <td>{{item.visualAcuityDistance}}</td>
+        <td>{{item.typeOfTest}}</td>
+        <td>{{item.patient}}</td>
+    </tr>
 </table>
 
 

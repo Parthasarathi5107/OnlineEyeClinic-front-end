@@ -18,37 +18,46 @@ export class ViewreportComponent implements OnInit {
   patientId: number;
   reportDetails: Report[];
 
-  ngOnInit(): void {
-    this.route.paramMap.subscribe(params =>
-            {
-              this.patientId = +params.get("id");
-              console.log(this.patientId);
-            });
+  // ngOnInit(): void {
+  //   this.route.paramMap.subscribe(params =>
+  //           {
+  //             this.patientId = +params.get("id");
+  //             console.log(this.patientId);
+  //           });
           
       
-          this.patientService.getPatient(this.patientId).subscribe(data =>{
+  //         this.patientService.getPatient(this.patientId).subscribe(data =>{
             
-          });
-  }
+  //         });
+  // }
 
-  onClick()
-  {
-    this.router.navigate(['report',this.patientId]);
-  }
+  // onClick()
+  // {
+  //   this.router.navigate(['report',this.patientId]);
+  // }
 
-  getDetails(pId: number)
-  {
-    this.reportDetails = [];
-    for (var i=0; i<this.currentPatienttests.length; i++)
-    {
-      if (this.currentPatienttests[i].reportId == pId)
-      {
-        this.reportService.viewReportByPatientId(pId).subscribe(data =>{
-          this.reportDetails = data;
-        });
-      }
-    }
+  // getDetails(pId: number)
+  // {
+  //   this.reportDetails = [];
+  //   for (var i=0; i<this.currentPatienttests.length; i++)
+  //   {
+  //     if (this.currentPatienttests[i].reportId == pId)
+  //     {
+  //       this.reportService.viewReportByPatientId(pId).subscribe(data =>{
+  //         this.reportDetails = data;
+  //       });
+  //     }
+  //   }
 
+  // }
+
+  ngOnInit(): void {
+    
+    console.log(this.allReport)
+    this.reportService.viewReportByPatientId(2).subscribe(data =>{
+      console.log(data);
+      this.allReport = data;
+    });
   }
  
 }

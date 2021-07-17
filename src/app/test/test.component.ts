@@ -20,50 +20,12 @@ export class TestComponent implements OnInit {
  
   
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params =>
-            {
-              this.patientId = +params.get("id");
-              console.log(this.patientId);
-            });
-          
-          this.reloadData();
-      
-          this.patientService.getPatient(this.patientId).subscribe(data =>{
-            
-          });
-  }
-  reloadData()
-  {
-    this.currentPatienttests = [];
-    this.testService.viewTest().subscribe(data =>
-      {
-        this.allTests = data;
-        this.allTests.forEach(test => {
-          if (test.patient.userId == this.patientId)
-            this.currentPatienttests.push(test);
-        });
-      });
-  }
-
-  onClick()
-  {
-    this.router.navigate(['patient',this.patientId]);
-  }
-
-  
-  getDetails(testId: number)
-  {
-    this.testDetails = [];
-    for (var i=0; i<this.currentPatienttests.length; i++)
-    {
-      if (this.currentPatienttests[i].testId == testId)
-      {
-        this.testService.viewTestById(testId).subscribe(data =>{
-          this.testDetails = data;
-        });
-      }
-    }
-
+    
+    console.log(this.allTests)
+    this.testService.viewTest().subscribe(data =>{
+      console.log(data);
+      this.allTests = data;
+    });
   }
 
 }

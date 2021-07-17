@@ -1,1 +1,52 @@
-<p>updatereport works!</p>
+<div class="card">
+    <div class="card-title">
+        <h4>Update Report</h4>
+    </div>
+    <div class="card-body">
+        <form novalidate #updateForm="ngForm">
+            <div class="form-group">
+                <label>Report Id: </label>
+                <input type="text" class="form-control" value="{{report.reportId}}"
+                [(ngModel)]= "report.reportId" name="reportId" />
+            </div>
+            <div class="form-group">
+                <label>Date: </label>
+                <input type="date" class="form-control" [(ngModel)]="report.dateOfReport" #dateOfReport="ngModel" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Description: </label>
+                <input type="text" class="form-control" [(ngModel)]="report.descriptionOfReport" #descriptionOfReport="ngModel"
+                required>
+            </div>
+            <div class="form-group">
+                <label>visual Acuity: </label>
+                <input type="text" class="form-control" value="{{report.visualAcuity}}"
+                [(ngModel)]= "report.visualAcuity" name="visualAcuity" />
+            </div>
+            <div class="form-group">
+                <label>visual Acuity Near: </label>
+                <input type="text" class="form-control" value="{{report.visualAcuityNear}}"
+                [(ngModel)]= "report.visualAcuityNear" name="visualAcuityNear" />
+            </div>
+            <div class="form-group">
+                <label>visual Acuity Distance: </label>
+                <input type="text" class="form-control" value="{{report.visualAcuityDistance}}"
+                [(ngModel)]= "report.visualAcuityDistance" name="visualAcuityDistance" />
+            </div>
+            <div class="form-group">
+                <label>Test Id: </label>
+                <input type="text" class="form-control" value="{{report.typeOfTest}}"
+                [(ngModel)]= "report.typeOfTest" name="testId" />
+            </div>
+            <div class="form-group">
+                <label>Patient Id: </label>
+                <input type="text" class="form-control" value="{{report.patient.userId}}"
+                [(ngModel)]= "report.patient.userId" name="patientId" />
+            </div>
+        </form>
+    </div>
+</div>
+<button type="button" class="btn btn-primary" (click)="update()">Confirm</button>
+&nbsp;&nbsp;&nbsp;
+<button type="button" class="btn btn-primary" (click)="back()">Cancel</button>

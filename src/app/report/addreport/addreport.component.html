@@ -1,56 +1,91 @@
 
-    <div class="card">
-        <div class="card-title">
-            <h4>Add Report</h4>
+<div class="card">
+    <div class="card-body">
+        <h4>Report Form</h4>
+        <div class="alert alert-info alert-dismissible " role="alert" *ngIf="formSubmitted">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              <span class="sr-only">Close</span>
+            </button>
+            <strong>Report added successfully! </strong><a routerLink="/admin">Go back to admin page</a>
         </div>
-        <div class="card-body">
-            <form novalidate #bookForm="ngForm">
-                <div class="form-group">
-                    <label>Date: </label>
-                    <input type="date" class="form-control" [(ngModel)]="report.dateOfReport" #dateOfReport="ngModel" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Description: </label>
-                    <input type="time" class="form-control" [(ngModel)]="report.descriptionOfReport" #descriptionOfReport="ngModel"
-                    required>
-                </div>
-                <div class="form-group">
-                    <label>Visual Acuity: </label>
-                    <input type="text" class="form-control" value="{{report.visualAcuity}}"
-                    [(ngModel)]= "report.visualAcuity" name="visualAcuity" />
-                </div>
-                <div class="form-group">
-                    <label>Visual Acuity Near: </label>
-                    <input type="text" class="form-control" value="{{report.visualAcuityNear}}"
-                    [(ngModel)]= "report.visualAcuityNear" name="visualAcuityNear" />
-                </div>
-                <div class="form-group">
-                    <label>Visual Acuity Near: </label>
-                    <input type="text" class="form-control" value="{{report.visualAcuityNear}}"
-                    [(ngModel)]= "report.visualAcuityNear" name="visualAcuityNear" />
-                </div>
-                <div class="form-group">
-                    <label>Visual Acuity Distance: </label>
-                    <input type="text" class="form-control" value="{{report.visualAcuityDistance}}"
-                    [(ngModel)]= "report.visualAcuityDistance" name="visualAcuityDistance" />
-                </div>
-                <div class="form-group">
-                    <label>TestId: </label>
-                    <input type="text" class="form-control" value="{{report.typeOfTest}}"
-                    [(ngModel)]= "report.typeOfTest" name="typeOfTest" />
-                </div>
-                <div class="form-group">
-                    <label>PatientId: </label>
-                    <input type="text" class="form-control" value="{{report.patient.userId}}"
-                    [(ngModel)]= "report.patient.userId" name="patient" />
-                </div>
-            </form>
+        <div class="row">
+            <div class="col-md-6">
+                <form [formGroup]="registerForm" novalidate >
+                    <div class="form-group">
+                        <label>Date </label>
+                        <input type="date" class="form-control" formControlName="dateOfReport" 
+                        [ngClass]="{'is-invalid':dateOfReport.errors && (dateOfReport.touched || dateOfReport.dirty), 'is-valid': dateOfReport.valid}" />
+                    </div>
+                  
+
+                    <div class="form-group">
+                        <label>Description </label>
+                        <input type="text" class="form-control" formControlName="descriptionOfReport" 
+                        [ngClass]="{'is-invalid':descriptionOfReport.errors && (descriptionOfReport.touched || descriptionOfReport.dirty), 'is-valid': descriptionOfReport.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>Description is required.</strong>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Visual Acuity </label>
+                        <input type="text" class="form-control" formControlName="visualAcuity" 
+                        [ngClass]="{'is-invalid':visualAcuity.errors && (visualAcuity.touched || visualAcuity.dirty), 'is-valid': visualAcuity.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>visualAcuity is required.</strong>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Visual Acuity Near</label>
+                        <input type="text" class="form-control" formControlName="visualAcuityNear" 
+                        [ngClass]="{'is-invalid':visualAcuityNear.errors && (visualAcuityNear.touched || visualAcuityNear.dirty), 'is-valid': visualAcuityNear.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>visualAcuityNear is required.</strong>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Visual Acuity Distance </label>
+                        <input type="text" class="form-control" formControlName="visualAcuityDistance" 
+                        [ngClass]="{'is-invalid':visualAcuityDistance.errors && (visualAcuityDistance.touched || visualAcuityDistance.dirty), 'is-valid': visualAcuityDistance.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>visualAcuityDistance is required.</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Test Id</label>
+                        <input type="text" class="form-control" formControlName="typeOfTest" 
+                        [ngClass]="{'is-invalid':typeOfTest.errors && (typeOfTest.touched || typeOfTest.dirty), 'is-valid': typeOfTest.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>Test id is required.</strong>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Patient Id </label>
+                        <input type="text" class="form-control" formControlName="patient" 
+                        [ngClass]="{'is-invalid':patient.errors && (patient.touched || patient.dirty), 'is-valid': patient.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>patient id is required.</strong>
+                        </div>
+                    </div>
+                   
+
+    
+                    
+                    
+                    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Add</button>
+                    <button class="btn btn-default" (click)="registerForm.reset()">Reset</button>
+                    <a routerLink="/login" class="btn btn-link">Cancel</a>
+
+                </form> 
+             </div>
         </div>
     </div>
-    <button type="button" class="btn btn-primary" (click)="onSubmit()">Confirm</button>
-    &nbsp;&nbsp;&nbsp;
-    <button type="button" class="btn btn-primary" (click)="back()">Cancel</button>
+</div>
 
 
 

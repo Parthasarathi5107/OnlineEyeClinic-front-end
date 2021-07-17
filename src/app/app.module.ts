@@ -86,6 +86,7 @@ const appRoutes:Routes=[
   {path:'doctor/:doctorId/details',component: DoctordetailsComponent},
   {path:'doctor/:doctorId/details/update',component: UpdatedoctorComponent},
   {path:'appointment/:doctorId/view',component: ViewappointmentComponent},
+  {path:'report/:reportId/details',component: UpdatereportComponent}
 
 ];
 
