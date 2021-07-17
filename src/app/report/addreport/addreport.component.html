@@ -1,1 +1,60 @@
-<p>addreport works!</p>
+
+    <div class="card">
+        <div class="card-title">
+            <h4>Add Report</h4>
+        </div>
+        <div class="card-body">
+            <form novalidate #bookForm="ngForm">
+                <div class="form-group">
+                    <label>Date: </label>
+                    <input type="date" class="form-control" [(ngModel)]="report.dateOfReport" #dateOfReport="ngModel" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Description: </label>
+                    <input type="time" class="form-control" [(ngModel)]="report.descriptionOfReport" #descriptionOfReport="ngModel"
+                    required>
+                </div>
+                <div class="form-group">
+                    <label>Visual Acuity: </label>
+                    <input type="text" class="form-control" value="{{report.visualAcuity}}"
+                    [(ngModel)]= "report.visualAcuity" name="visualAcuity" />
+                </div>
+                <div class="form-group">
+                    <label>Visual Acuity Near: </label>
+                    <input type="text" class="form-control" value="{{report.visualAcuityNear}}"
+                    [(ngModel)]= "report.visualAcuityNear" name="visualAcuityNear" />
+                </div>
+                <div class="form-group">
+                    <label>Visual Acuity Near: </label>
+                    <input type="text" class="form-control" value="{{report.visualAcuityNear}}"
+                    [(ngModel)]= "report.visualAcuityNear" name="visualAcuityNear" />
+                </div>
+                <div class="form-group">
+                    <label>Visual Acuity Distance: </label>
+                    <input type="text" class="form-control" value="{{report.visualAcuityDistance}}"
+                    [(ngModel)]= "report.visualAcuityDistance" name="visualAcuityDistance" />
+                </div>
+                <div class="form-group">
+                    <label>TestId: </label>
+                    <input type="text" class="form-control" value="{{report.typeOfTest}}"
+                    [(ngModel)]= "report.typeOfTest" name="typeOfTest" />
+                </div>
+                <div class="form-group">
+                    <label>PatientId: </label>
+                    <input type="text" class="form-control" value="{{report.patient.userId}}"
+                    [(ngModel)]= "report.patient.userId" name="patient" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="onSubmit()">Confirm</button>
+    &nbsp;&nbsp;&nbsp;
+    <button type="button" class="btn btn-primary" (click)="back()">Cancel</button>
+
+
+
+
+
+
+    

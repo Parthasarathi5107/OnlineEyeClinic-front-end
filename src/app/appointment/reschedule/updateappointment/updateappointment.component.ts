@@ -4,11 +4,11 @@ import { Component, OnInit } from '@angular/core';
 import { Appointment } from 'src/app/details/appointment';
 
 @Component({
-  selector: 'app-reschedule',
-  templateUrl: './reschedule.component.html',
-  styleUrls: ['./reschedule.component.css']
+  selector: 'app-updateappointment',
+  templateUrl: './updateappointment.component.html',
+  styleUrls: ['./updateappointment.component.css']
 })
-export class RescheduleComponent implements OnInit {
+export class UpdateappointmentComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,private router: Router,private appointmentService:AppointmentService) { }
 
@@ -30,21 +30,25 @@ export class RescheduleComponent implements OnInit {
       }, error => console.log(error));
   }
 
-  backToPortal()
-  {
-    this.router.navigate(['appointment',this.appointmentId]);
-  }
+  update()
+{
+  this.appointment.appointmentId=this.appointmentId;
+  this.appointmentService.updateAppointment(this.appointment).subscribe(data =>{
 
-  goUpdate()
-  {
-    this.router.navigate(['appointment',this.appointmentId,'details','update']);
-  }
+    console.log(data);
+    this.appointment = data;
+  });
+  this.back();
+}
+
+back()
+{
+  this.router.navigate(['appointment',this.appointmentId,'details']);
+}
 
 }
 
 
 
 
-  
-  
 

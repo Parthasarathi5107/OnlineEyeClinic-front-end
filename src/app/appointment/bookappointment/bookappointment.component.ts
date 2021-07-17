@@ -1,3 +1,4 @@
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Appointment } from './../../details/appointment';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -12,31 +13,64 @@ export class BookappointmentComponent implements OnInit {
 
   constructor(private appointmentService:AppointmentService,private router: Router,private route:ActivatedRoute) { }
 
+  registerForm: FormGroup;
+
+  appointmentDate :FormControl;
+	appointmentTime :FormControl;
+	doctor :FormControl;
+	patient :FormControl;
+  formSubmitted = false;
+
   ngOnInit(): void {
-    console.log(this.appointment.patient);
-    this.appointment.appointmentDate=this.route.snapshot.params['date'];
-    this.appointment.appointmentTime=this.route.snapshot.params['time'];
-    this.appointment.patient.userId = this.route.snapshot.params['id'];
-    this.appointment.doctor.userId = this.route.snapshot.params['id'];
-    
+
+    this.appointmentDate = new FormControl('', Validators.required);
+    this.appointmentTime = new FormControl('', Validators.required);
+    this.doctor = new FormControl('', Validators.required);
+    this.patient = new FormControl('', Validators.required);
+  
+    this.registerForm = new FormGroup(
+      {
+        'appointmentDate': this.appointmentDate,
+        'appointmentTime': this.appointmentTime,
+        'doctor': this.doctor,
+        'patient': this.patient
+      }
+    );
   }
 
   appointment:Appointment=new Appointment();
-
+  patientId: number;
 
   onSubmit()
-{
-    this.appointmentService.bookAppointment(this.appointment).subscribe(data=>{
-    console.log(data);
-    alert("Appointment has created successfully"); 
-  },
-  error=>console.log(error));
+  {
+    
+      this.addAppointment(this.registerForm.value);
+    
+  }
   
-}
+  addAppointment(appointment: Appointment)
+  {
+    this.appointmentService.bookAppointment(appointment)
+    .subscribe(data => {
+      console.log(data)
+    },
+    error => console.log(error));
+  
+    this.formSubmitted = true;
+  }
 
-goBack()
+back()
 {
-  this.route.url;
+  this.router.navigate(['appointment',this.patientId]);
 }
 
 }
+
+
+
+
+
+
+
+
+

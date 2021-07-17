@@ -1,1 +1,34 @@
-<p>reschedule works!</p>
+<div class="card">
+    <div class="card-title">
+        <h4>Appointment Details</h4>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Appointment Id</th>
+                    <td>{{appointment.appointmentId}}</td>
+                </tr>
+                <tr>
+                    <th>Date</th>
+                    <td>{{appointment.appointmentDate}}</td>
+                </tr>
+                <tr>
+                    <th>Time</th>
+                    <td>{{appointment.appointmentTime}}</td>
+                </tr>
+                <tr>
+                    <th>Doctor ID</th>
+                    <td>{{appointment.doctor.userId}}</td>
+                </tr>
+               <tr>
+                    <th>Patient ID</th>
+                    <td>{{appointment.patient.userId}}</td>
+                </tr>
+                
+            </tbody>
+        </table>
+        <button class="btn btn-primary" type="button" (click)="goUpdate()">Reschedule</button>
+        &nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-primary" (click)="backToPortal()">Back to Portal</button>
+</div>

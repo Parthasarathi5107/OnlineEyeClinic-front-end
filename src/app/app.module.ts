@@ -34,6 +34,7 @@ import { DoctorScheduleComponent } from './doctor/doctor-schedule/doctor-schedul
 import { PatientDetailsComponent } from './patient/patient-details/patient-details.component';
 import { UpdatePatientComponent } from './patient/patient-details/update-patient/update-patient.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { UpdateappointmentComponent } from './appointment/reschedule/updateappointment/updateappointment.component';
 
 
 
@@ -55,7 +56,7 @@ const appRoutes:Routes=[
   {path:'viewreport',component:  ViewreportComponent}, 
   {path:'docActivity',component: DoctorActivityComponent},
   {path:'createtest',component: AddtestComponent},
-  {path:'addreport',component: AddreportComponent},
+  {path:'report/:patientId',component: AddreportComponent},
   {path:'login',component:LoginComponent},
   {path:'patient/:id',component: PatientComponent},
   {path:'doctor/:id',component: DoctorComponent},
@@ -66,7 +67,9 @@ const appRoutes:Routes=[
   {path:'patient/:patientId/details',component: PatientDetailsComponent},
   {path:'patient/:patientId/details/update',component: UpdatePatientComponent},
   {path:'patient/:patientId',component: TestComponent},
-
+  {path:'appointment/:appointmentId/details',component: RescheduleComponent},
+  {path:'appointment/:appointmentId/details/update',component: UpdateappointmentComponent},
+  {path:'appointment/:patientId',component: BookappointmentComponent},
 ];
 
 @NgModule({
@@ -100,7 +103,8 @@ const appRoutes:Routes=[
     ForgotPasswordComponent,
     DoctorScheduleComponent,
     PatientDetailsComponent,
-    UpdatePatientComponent
+    UpdatePatientComponent,
+    UpdateappointmentComponent
 
   ],
   imports: [

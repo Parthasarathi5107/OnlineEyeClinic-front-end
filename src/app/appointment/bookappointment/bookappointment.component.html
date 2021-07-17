@@ -1,45 +1,47 @@
-<div >
-    <h1 > Book Appointment </h1>
-    <!-- <div class="middlepane" ></div> -->
-    <form  (ngSubmit) = "onSubmit()">
-
-        <div class="form-group">
-            <label for="appointmentDate">Appointment Date<span>*</span></label>
-
-            <input type="date" class="form-control" [(ngModel)]="appointment.appointmentDate" #appointmentDate="ngModel" required>
+<div class="card">
+    <div class="card-body">
+        <h4>Book Appointment </h4>
+        <div class="alert alert-info alert-dismissible " role="alert" *ngIf="formSubmitted">
+            <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span> -->
+              <!-- <span class="sr-only">Close</span> -->
+            <!-- </button> -->
+            <strong>Appointment Booked successfully! </strong><a routerLink="/login">Back to Login page</a>
         </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form [formGroup]="registerForm" novalidate >
+                    <div class="form-group">
+                        <label>Date </label>
+                        <input type="date" class="form-control" formControlName="appointmentDate" 
+                        [ngClass]="{'is-invalid':appointmentDate.errors && (appointmentDate.touched || appointmentDate.dirty), 'is-valid': appointmentDate.valid}" />
+                    </div>
 
+                    <div class="form-group">
+                        <label>Time </label>
+                        <input type="time" class="form-control" formControlName="appointmentTime" 
+                        [ngClass]="{'is-invalid':appointmentTime.errors && (appointmentTime.touched || appointmentTime.dirty), 'is-valid': appointmentTime.valid}" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Doctor Id</label>
+                        <input type="text" class="form-control" formControlName="doctor" 
+                        [ngClass]="{'is-invalid':doctor.errors && (doctor.touched || doctor.dirty), 'is-valid': doctor.valid}" />
+                        </div>
+                    
 
-        <div class="form-group">
-            <label for="appointmentTime">Appointment Time<span>*</span></label>
+                    <div class="form-group">
+                        <label>Patient Id</label>
+                        <input type="text" class="form-control" formControlName="patient" 
+                        [ngClass]="{'is-invalid':patient.errors && (patient.touched || patient.dirty), 'is-valid': patient.valid}" />
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Book</button>
+                    <button class="btn btn-default" (click)="registerForm.reset()">Reset</button>
+                    <button type="button" class="btn btn-primary" (click)="back()">Cancel</button>
 
-            <input type="time" class="form-control" [(ngModel)]="appointment.appointmentTime" #appointmentTime="ngModel"
-                required>
-            <div class="invalid-feedback">
-                <div>Time is required</div>
-            </div>
-
+                </form> 
+             </div>
         </div>
-
-
-        <div class="form-group">
-            <label> Patient Id <span>*</span></label>
-            <input  type="number" class ="form-control" id = "pId"
-                [(ngModel)] = "appointment.patient.userId" name = "pId">
-        </div>
-
-    
-        <div class="form-group">
-            <label for="doctorId">Doctor Id<span>*</span></label>
-            <input type="number" class="form-control" [(ngModel)]="appointment.doctor.userId" #doctorId="ngModel"
-                required>
-        </div>
-
-        
-    
-        <button  class = "btn btn-success  float-right" type ="submit">Book</button>
-        <button  class = "btn btn-success  float-left" type ="submit">Back</button>
-        
-    
-    </form>
     </div>
+</div>
