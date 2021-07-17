@@ -1,1 +1,73 @@
-<p>updatespectacles works!</p>
+<div class="card">
+    <div class="card-body">
+        <h4>Spectacles Form</h4>
+        <div class="alert alert-info alert-dismissible " role="alert" *ngIf="formSubmitted">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              <span class="sr-only">Close</span>
+            </button>
+            <strong>Spectacle added successfully! </strong><a routerLink="/spectacles/manage">Go back to admin page</a>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form [formGroup]="registerForm" novalidate >
+                    <div class="form-group">
+                        <label> Spectacles Id</label>
+                        <input type="number" class="form-control" formControlName="spectaclesId" 
+                        [ngClass]="{'is-invalid':spectaclesId?.errors && (spectaclesId?.touched || spectaclesId?.dirty), 'is-valid': spectaclesId?.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>spectacles Id is required.</strong>
+                        </div>
+                    <div class="form-group">
+                        <label>Spectacles Model </label>
+                        <input type="text" class="form-control" formControlName="spectaclesModel" 
+                        [ngClass]="{'is-invalid':spectaclesModel.errors && (spectaclesModel.touched || spectaclesModel.dirty), 'is-valid': spectaclesModel.valid}" />
+                        <div class="invalid-feedback">
+                            <strong *ngIf="spectaclesModel.errors?.required">Spectacles Model is required.</strong>
+                            <strong *ngIf="spectaclesModel.errors?.minlength">Enter a valid Spectacles Model.</strong>
+                        </div>
+                    </div>
+                  
+                    
+                    </div>
+                    <div class="form-group">
+                        <label>Spectacles Description </label>
+                        <input type="text" class="form-control" formControlName="spectaclesDescription" 
+                        [ngClass]="{'is-invalid':spectaclesDescription.errors && (spectaclesDescription.touched || spectaclesDescription.dirty), 'is-valid': spectaclesDescription.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>Spectacles Description is required.</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Spectacles Rating </label>
+                        <input type="number" class="form-control" formControlName="spectaclesRating" 
+                        [ngClass]="{'is-invalid':spectaclesRating.errors && (spectaclesRating.touched || spectaclesRating.dirty), 'is-valid': spectaclesRating.valid}" />
+                        <div class="invalid-feedback">
+                            <strong *ngIf="spectaclesRating.errors?.required">Spectacles Rating is required.</strong>
+                            <strong *ngIf="spectaclesRating.errors?.min">Enter a valid Spectacles Rating.</strong>
+                        </div>
+                    </div>
+                        
+                    
+
+                    <div class="form-group">
+                        <label>Spectacles Cost</label>
+                        <input type="number" class="form-control" formControlName="spectaclesCost" 
+                        [ngClass]="{'is-invalid':spectaclesCost.errors && (spectaclesCost.touched || spectaclesCost.dirty), 'is-valid': spectaclesCost.valid}" />
+                        <div class="invalid-feedback">
+                            <strong *ngIf="spectaclesCost.errors?.required">Spectacles Cost is required.</strong>
+                                <strong *ngIf="spectaclesCost.errors?.min">Enter a valid cost.</strong>
+                        </div>
+                    </div>
+                    
+                    
+                    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Add</button>
+                    <button class="btn btn-default" (click)="registerForm.reset()">Reset</button>
+                    <a routerLink="/spectacles/manage" class="btn btn-link">Cancel</a>
+
+                </form> 
+             </div>
+        </div>
+    </div>
+</div>

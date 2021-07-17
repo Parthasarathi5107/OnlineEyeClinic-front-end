@@ -38,6 +38,13 @@ import { UpdatedoctorComponent } from './doctor/doctordetails/updatedoctor/updat
 import { LogoutComponent } from './logout/logout.component';
 import { AddspectaclesComponent } from './spectacles/addspectacles/addspectacles.component';
 import { UpdatespectaclesComponent } from './spectacles/updatespectacles/updatespectacles.component';
+import { DeletespectaclesComponent } from './spectacles/deletespectacles/deletespectacles.component';
+import { AdddoctorComponent } from './doctor/adddoctor/adddoctor.component';
+import { UpdateadminComponent } from './admin/updateadmin/updateadmin.component';
+import { ManagedoctorComponent } from './admin/managedoctor/managedoctor.component';
+import { ManagetestComponent } from './admin/managetest/managetest.component';
+import { ManagespectaclesComponent } from './admin/managespectacles/managespectacles.component';
+import { DoctorScheduleComponent } from './doctor/doctor-schedule/doctor-schedule.component';
 
 
 
@@ -70,10 +77,20 @@ const appRoutes:Routes=[
   {path:'patient/:patientId/details/update',component: UpdatePatientComponent},
   {path:'report/:patientId',component: ReportComponent},
   {path:'spectacles',component: SpectaclesComponent},
-  {path:'admin',component: AdminComponent},
+  {path:'admin/:adminId',component: AdminComponent},
   {path:'doctor/:doctorId/details',component: DoctordetailsComponent},
   {path:'doctor/:doctorId/details/update',component: UpdatedoctorComponent},
   {path:'appointment/:doctorId/view',component: ViewappointmentComponent},
+  {path:'managedoctor',component: ManagedoctorComponent},
+  {path:'test/manage',component: ManagetestComponent},
+  {path:'spectacles/manage',component: ManagespectaclesComponent},
+  {path:'adddoctor',component: AdddoctorComponent},
+  {path:'viewAlldoctor',component: DoctorScheduleComponent},
+  {path:'spectacles/add',component: AddspectaclesComponent},
+  {path:'spectacles/viewAll',component: SpectaclesComponent},
+  {path:'spectacles/update',component: UpdatespectaclesComponent},
+  {path:'spectacles/delete',component: SpectaclesComponent},
+  {path:'admin/:adminId/update',component: UpdateadminComponent},
 ];
 
 @NgModule({
@@ -112,6 +129,13 @@ const appRoutes:Routes=[
     LogoutComponent,
     AddspectaclesComponent,
     UpdatespectaclesComponent,
+    DeletespectaclesComponent,
+    AdddoctorComponent,
+    UpdateadminComponent,
+    ManagedoctorComponent,
+    ManagetestComponent,
+    ManagespectaclesComponent,
+    DoctorScheduleComponent,
     
   ],
   imports: [

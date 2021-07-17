@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
   admins: Admin[]=[];
   currentPatient: Patient=null;
   currentDoctor: Doctor = null;
+  currentAdmin: Admin = null;
   loginForm: FormGroup;
 
   userId: FormControl;
@@ -120,37 +121,31 @@ export class LoginComponent implements OnInit {
   adminLogin()
   {
     this.userService.getUsersList().subscribe(data => 
-      { 
-                this.admins = data;
+      {
+        this.admins = data;
 
         this.admins.forEach(admin => 
           {
-            if(admin.role=='admin'){
+          if(admin.role=='admin'){
+            
             if (admin.userName == this.loginForm.get('userName').value)
-            { 
-              if (admin.password == this.loginForm.get('password').value){
-                // this.currentPatient = patient;
-                console.log("login successfull");
-                this.router.navigate(['admin']);
-                }
+            {
+              if (admin.password == this.loginForm.get('password').value)
+                this.currentAdmin = admin;
             }
           }
-          else {this.showErrorMessage = true;
-                console.log("invalid credentials");}
-          
           });
 
-      //   if (this.currentPatient == null){
-      //     this.showErrorMessage = true;
-      //     console.log("invalid credentials");}
-      //   else{
-      //     this.router.navigate(['patient',this.currentPatient.userId]);
-      //     console.log("Login successful");}
+        if (this.currentAdmin == null)
+          this.showErrorMessage = true;
+        else
+          this.router.navigate(['admin',this.currentAdmin.userId]);
         
-      // });
+      });
 
     this.showErrorMessage = false;
-  });
+  
+}
 }
 
   
@@ -192,4 +187,4 @@ export class LoginComponent implements OnInit {
   // }
   
   
-}
+

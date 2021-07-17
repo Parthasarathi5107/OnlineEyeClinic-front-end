@@ -1,6 +1,8 @@
-import { Test } from './../details/test';
+
 import { AdminService } from './../service/admin.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Admin } from '../details/admin';
 
 @Component({
   selector: 'app-admin',
@@ -9,26 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private adminService:AdminService) { 
-    //  this.getAllTests;
-  }
+  adminId: number;
+  admin: Admin;
 
-  test !:Test[];
+  constructor(private route: ActivatedRoute, private adminService: AdminService, private router: Router) { }
 
   ngOnInit(): void {
-    
-  }
 
-  // getAllTests()
-  // {
-  //   this.adminService.getAllTest().subscribe(data=>{
-  //       this.test = data;
-  //   },
-  //   err=>
-  //   {
-  //     console.log(err.error);
-  //   }
-    
-  //   ); 
-  // }
+    this.route.paramMap.subscribe(params =>
+      {
+        this.adminId = +params.get("id");
+      });}
+
+
+      goUpdate()
+      {
+        this.router.navigate(['admin',this.adminId,'details','update']);
+      }
+
 }
