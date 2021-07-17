@@ -40,6 +40,7 @@ export class SpectaclesService {
 
   viewSpectacles():Observable<any>
     {
+      
       return this.http.get(`${this.viewSpectacles_endpoint}`);
     }
 

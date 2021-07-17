@@ -17,6 +17,7 @@ export class ReportService {
   private viewReportById_endpoint = this.baseUrl+'/view/{reportId}/{patientId}';
   private viewByDate_endpoint = this.baseUrl+'/viewByDate/{date}';
   private viewSpectacles_endpoint = this.baseUrl+'/spectacles';
+  private viewReportByPatientId_endpoint = this.baseUrl+'/viewById/{patientId}';
 
   addReport(report: Report): Observable<any>
     {
@@ -34,6 +35,10 @@ export class ReportService {
 
   viewReportById(rid:number,pid:number):Observable<any>{
     return this.http.get(`${this.viewReportById_endpoint}/${rid}/${pid}`);
+  }
+
+  viewReportByPatientId(pid:number):Observable<any>{
+    return this.http.get(`${this.viewReportByPatientId_endpoint}/${pid}`);
   }
 
   viewReportByDate(date:Date):Observable<any>{

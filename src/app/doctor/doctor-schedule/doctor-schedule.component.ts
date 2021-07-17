@@ -1,3 +1,4 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { DoctorService } from './../../service/doctor.service';
 import { Doctor } from './../../details/doctor';
 import { Component, OnInit } from '@angular/core';
@@ -9,11 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoctorScheduleComponent implements OnInit {
 
-  constructor(private doctorService : DoctorService) { }
- doctor !:Doctor[];
+  constructor(private doctorService : DoctorService,private route: ActivatedRoute, private router: Router) {
+    
+   }
+ doctor:Doctor[] = [];
 
-  ngOnInit(): void {
-  }
+ ngOnInit(): void {
+  console.log(this.doctor)
+  this.doctorService.getDoctorList().subscribe(data =>{
+    console.log(data);
+    this.doctor = data;
+  });
+}
 
   getAllDoctors()
   {

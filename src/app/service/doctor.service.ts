@@ -1,8 +1,8 @@
+import { Doctor } from './../details/doctor';
 import { Test } from './../details/test';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Doctor } from '../details/doctor';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +11,7 @@ export class DoctorService {
 
   private baseUrl = 'http://localhost:9999/doctor';
   private addDoctor_endpoint = this.baseUrl+'/add';
+  private updateDoctor_endpoint = this.baseUrl+'/update';
   private viewAllDoctors_endpoint = this.baseUrl+'/viewAll';
   private viewById_endpoint = this.baseUrl+'/view/{doctorId}';
   private deleteDoc_endpoint = this.baseUrl+'/delete/{doctorId}';
@@ -35,11 +36,11 @@ export class DoctorService {
     return this.http.get(`${this.viewById_endpoint}/${id}`);
   }
 
-  updateDoctor(id: number, value: any): Observable<any>
+  updateDoctor(doctor:Doctor): Observable<any>
   {
-    return this.http.put(`${this.baseUrl}/${id}`, value);
+    return this.http.put(`${this.updateDoctor_endpoint}`, doctor);
   }
-
+ 
   deleteDoctor(id:number):Observable<any>
   {
     return this.http.delete(`${this. deleteDoc_endpoint}/${id}`, { responseType: 'text' });

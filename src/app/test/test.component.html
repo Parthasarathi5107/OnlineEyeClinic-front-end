@@ -8,7 +8,7 @@
         <td><b>Cost</b></td>
         <td><b>PatientId</b></td>
     </tr>
-    <!-- <tr *ngFor="let item of ">
+     <tr *ngFor="let item of currentPatienttests"> 
         <td>{{item.testId}}</td>
         <td><a >{{item.testName}}</a></td>
         <td>{{item.testType}}</td>
@@ -16,7 +16,70 @@
         <td>{{item.testCost}}</td>
         <td>{{item.patient}}</td>
 
-    </tr> -->
-</table>
+    </tr> 
+</table> 
+
+
+<!-- <div class="card">
+    <div class="card-title">
+        <h4>Test</h4>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Test Id</th>
+                    <th>testName</th>
+                    <th>testType</th>
+                    <th>Description</th>
+                    <th>Cost</th>
+                    <th>patient</th>
+                </tr>
+      
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of currentPatienttests">
+                    <td>{{order.testId}}</td>
+                    <td>{{order.testName}}</td>
+                    <td>{{order.testType}}</td>
+                    <td>{{order.testDescription}}</td>
+                    <td>{{order.testCost}}</td>
+                    <td>{{order.patient}}</td>
+                    <td>
+                        <button mdbBtn class="btn btn-primary" type="button" data-toggle="modal" data-target="#seeDetails" (click)="getDetails(order.testId)">See Details</button>    
+                    </td>
+                    <td>
+                        <!-- <button type="button" class="btn btn-primary" (click)="deleteOrder(order.orderId)" [disabled]="order.status != 'Order Placed'">Delete</button> -->
+                    <!-- </td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-primary" (click)="onClick()">Back to Portal</button>
+</div>
+
+<div class="modal fade" id="seeDetails" tabindex="-1" role="dialog" aria-labelledby="seeDetailsLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="seeDetailsLabel">Your Ordered Items: </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p *ngFor="let detail of orderDetails">
+                    Vendor Id: {{detail.vendorId}} <br>
+                    {{detail.itemName}}: Quantity: {{detail.quantity}} Subtotal: ${{detail.totalPrice}} <br>
+                    Status: <span [ngStyle]="{'color': getColor(detail.status)}">{{detail.status}}</span> <br>
+                    Comments: {{detail.comments}}
+                </p>
+                <p>coupon(s):</p>
+                        <ul *ngFor="let coupon of currentOrderCoupons">
+                            <li style="color: deepskyblue;">{{coupon.code}}: ${{coupon.value}}</li>
+                        </ul>
+            </div>
+        </div>
+    </div>
+</div> --> 
 
 

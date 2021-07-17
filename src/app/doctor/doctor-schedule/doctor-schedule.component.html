@@ -1,6 +1,7 @@
 <table >
     <tr>
         <td><b>Doctor Id</b></td>
+        <td><b>Doctor Name</b></td>
         <td><b>ConsultationTime</b></td>
         <td><b>Mobile</b></td>
         <td><b>Email</b></td>
@@ -8,6 +9,7 @@
     </tr>
     <tr *ngFor="let item of doctor">
         <td>{{item.userId}}</td>
+        <td>{{item.userName}}</td>
         <td>{{item.doctorConsultationTime}}</td>
         <td><a >{{item.doctorMobile}}</a></td>
         <td>{{item.doctorEmail}}</td>
