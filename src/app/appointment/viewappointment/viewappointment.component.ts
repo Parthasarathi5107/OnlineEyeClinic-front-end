@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./viewappointment.component.css']
 })
 export class ViewappointmentComponent implements OnInit {
-
+ 
   constructor() { }
 
   ngOnInit(): void {

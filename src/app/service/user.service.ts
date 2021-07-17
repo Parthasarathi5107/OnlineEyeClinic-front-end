@@ -13,6 +13,7 @@ export class UserService {
   private baseUrl = 'http://localhost:9999/users';
   private ViewAll_endpoint = this.baseUrl+'/viewAll';
   private Login_endpoint = this.baseUrl+'/signin';
+  private viewUserById_endpoint = this.baseUrl+'/view/{userId}';
 
   getUsersList(): Observable<any>
   {
@@ -21,5 +22,13 @@ export class UserService {
   getLogin(user:User): Observable<any>
   {
     return this.http.post(`${this.Login_endpoint}`,user);
+ 
   }
+  viewUserById(id:number):Observable<any>{
+    return this.http.get(`${this.viewUserById_endpoint}/${id}`);
+    }
+    
+  
 }
+
+

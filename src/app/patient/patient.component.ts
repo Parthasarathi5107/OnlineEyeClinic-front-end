@@ -35,6 +35,7 @@ export class PatientComponent implements OnInit {
 
     goDetails()
   {
+    console.log(this.patientId)
     this.router.navigate(['patient',this.patientId,'details']);
   }
 

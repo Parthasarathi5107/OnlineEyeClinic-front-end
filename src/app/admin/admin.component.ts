@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class AdminComponent implements OnInit {
 
   constructor(private adminService:AdminService) { 
-     this.getAllTests;
+    //  this.getAllTests;
   }
 
   test !:Test[];
@@ -19,16 +19,16 @@ export class AdminComponent implements OnInit {
     
   }
 
-  getAllTests()
-  {
-    this.adminService.getAllTest().subscribe(data=>{
-        this.test = data;
-    },
-    err=>
-    {
-      console.log(err.error);
-    }
+  // getAllTests()
+  // {
+  //   this.adminService.getAllTest().subscribe(data=>{
+  //       this.test = data;
+  //   },
+  //   err=>
+  //   {
+  //     console.log(err.error);
+  //   }
     
-    ); 
-  }
+  //   ); 
+  // }
 }
