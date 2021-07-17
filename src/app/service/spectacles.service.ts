@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { Observable } from 'rxjs';
-import { Spectacles } from './../details/spectacles';
-=======
->>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -43,18 +39,11 @@ export class SpectaclesService {
     return this.http.get(`${this.viewSpectaclesById_endpoint}/${id}`);
   }
 
-<<<<<<< HEAD
-  viewSpectacles():Observable<any>
-    {
-      
-      return this.http.get(`${this.viewSpectacles_endpoint}`);
-=======
   viewSpectacles():Observable<Spectacles[]>
     {  console.log("in service");
       return this.http.get<Spectacles[]>(`${this.viewSpectacles_endpoint}`);
      
       
->>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
     }
 
   viewByRating(rating:number):Observable<any>{

@@ -11,10 +11,6 @@ import { Component, OnInit } from '@angular/core';
 export class AdminComponent implements OnInit {
 
   constructor(private adminService:AdminService) { 
-<<<<<<< HEAD
-=======
-    //  this.getAllTests;
->>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
   }
 
  admin : Admin;
@@ -23,7 +19,6 @@ export class AdminComponent implements OnInit {
     
   }
 
-<<<<<<< HEAD
   update()
   {
     this.adminService.updateAdmin(this.admin).subscribe(data =>{
@@ -34,18 +29,4 @@ export class AdminComponent implements OnInit {
 
   }
 
-=======
-  // getAllTests()
-  // {
-  //   this.adminService.getAllTest().subscribe(data=>{
-  //       this.test = data;
-  //   },
-  //   err=>
-  //   {
-  //     console.log(err.error);
-  //   }
-    
-  //   ); 
-  // }
->>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
 }

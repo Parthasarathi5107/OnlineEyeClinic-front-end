@@ -16,9 +16,6 @@ export class UserService {
   private viewUserById_endpoint = this.baseUrl+'/view/{userId}';
   private viewUsers_endpoint = this.baseUrl+'/viewAll';
 
-  viewUserById(id:number):Observable<any>{
-    return this.http.get(`${this.viewUserById_endpoint}/${id}`);
-    }
     
   viewUser():Observable<any>{
     return this.http.get(`${this.viewUsers_endpoint}`);
@@ -27,7 +24,7 @@ export class UserService {
 
   private ViewAll_endpoint = this.baseUrl+'/viewAll';
   private Login_endpoint = this.baseUrl+'/signin';
-  private viewUserById_endpoint = this.baseUrl+'/view/{userId}';
+
 
   getUsersList(): Observable<any>
   {
@@ -38,15 +35,11 @@ export class UserService {
     return this.http.post(`${this.Login_endpoint}`,user);
  
   }
-<<<<<<< HEAD
 
-=======
   viewUserById(id:number):Observable<any>{
     return this.http.get(`${this.viewUserById_endpoint}/${id}`);
     }
     
-  
->>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
 }
 
 

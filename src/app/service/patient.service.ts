@@ -13,7 +13,6 @@ export class PatientService {
   private updatePatient_endpoint = this.baseUrl+'/update';
   private viewAllPatients_endpoint = this.baseUrl+'/viewAll';
   private viewById_endpoint = this.baseUrl+'/view';
-  private update_endpoint = this.baseUrl+'/update';
   private viewByNameAndEmail_endpoint = this.baseUrl+'/viewByName';
   
 
@@ -37,11 +36,8 @@ export class PatientService {
 
   updatePatient(patient:Patient): Observable<any>
   {
-<<<<<<< HEAD
+
     return this.http.put(`${this.updatePatient_endpoint}`, patient);
-=======
-    return this.http.put(`${this.update_endpoint}`, patient);
->>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
   }
   
   getPatientByUsernameAndEmail(patientName: string, patientEmail: string): Observable<any>

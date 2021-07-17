@@ -10,14 +10,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DoctorComponent implements OnInit {
 
-<<<<<<< HEAD
-  constructor(private doctorService : DoctorService) { }
-=======
   doctorId: number;
   doctor: Doctor;
 
   constructor(private route: ActivatedRoute, private doctorService: DoctorService, private router: Router) { }
->>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params =>
@@ -41,26 +37,7 @@ export class DoctorComponent implements OnInit {
     this.router.navigate(['doctor',this.doctorId,'details']);
   }
 
-<<<<<<< HEAD
-  doctor !:Doctor[];
-
-
-  getAllDoctors()
-  {
-   this.doctorService.getDoctorList().subscribe(data=>{
-       this.doctor = data;
-   },
-   err=>
-   {
-     console.log(err.error);
-   }
-   
-   ); 
-  
-  }
-=======
       
   
 
->>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
 }

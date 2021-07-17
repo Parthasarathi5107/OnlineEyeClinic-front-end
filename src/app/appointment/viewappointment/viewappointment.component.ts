@@ -8,17 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./viewappointment.component.css']
 })
 export class ViewappointmentComponent implements OnInit {
-<<<<<<< HEAD
 
   constructor(private appointmentService:AppointmentService) {
     this.getAllAppointments;
    }
 
   appointments !:Appointment[];
-=======
- 
-  constructor() { }
->>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
 
   ngOnInit(): void {
   }

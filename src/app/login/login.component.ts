@@ -15,13 +15,9 @@ import { DoctorService } from '../service/doctor.service';
 })
 export class LoginComponent implements OnInit {
 
-<<<<<<< HEAD
-  roles = ['patient', 'doctor'];
-=======
 
 
   roles = ['patient', 'doctor','admin'];
->>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
   patients:Patient[] = [];
   doctors: Doctor[] = [];
   admins: Admin[]=[];
@@ -119,8 +115,6 @@ export class LoginComponent implements OnInit {
 
     this.showErrorMessage = false;
   }
-<<<<<<< HEAD
-=======
 
   adminLogin()
   {
@@ -197,5 +191,4 @@ export class LoginComponent implements OnInit {
   // }
   
   
->>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
 }
