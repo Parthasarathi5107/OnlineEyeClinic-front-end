@@ -3,6 +3,11 @@ import { Test } from './../details/test';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+<<<<<<< HEAD
+=======
+import { Doctor } from '../details/doctor';
+import { Test } from '../details/test';
+>>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
 
 @Injectable({
   providedIn: 'root'
@@ -37,10 +42,18 @@ export class DoctorService {
   }
 
   updateDoctor(doctor:Doctor): Observable<any>
+<<<<<<< HEAD
   {
     return this.http.put(`${this.updateDoctor_endpoint}`, doctor);
   }
  
+=======
+  
+  {
+    return this.http.put(`${this.baseUrl}`,doctor);
+  }
+
+>>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
   deleteDoctor(id:number):Observable<any>
   {
     return this.http.delete(`${this. deleteDoc_endpoint}/${id}`, { responseType: 'text' });

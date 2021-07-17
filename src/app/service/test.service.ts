@@ -1,13 +1,22 @@
+<<<<<<< HEAD
 import { Observable } from 'rxjs';
 import { Test } from './../details/test';
+=======
+>>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Test } from '../details/test';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TestService {
 
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
   constructor(private http: HttpClient) { }
 
   private baseUrl = 'http://localhost:9999/test';
@@ -25,6 +34,22 @@ export class TestService {
 updateTest(test: Test): Observable<any>
 {
 return this.http.put(`${this.updateTest_endpoint}`, test);
+<<<<<<< HEAD
+=======
+}
+
+deleteTest(id:number):Observable<any>{
+return this.http.delete(`${this.deleteTest_endpoint}/${id}`, { responseType: 'text' });
+}
+
+viewTestById(id:number):Observable<any>{
+return this.http.get(`${this.viewTestById_endpoint}/${id}`);
+}
+
+viewTest():Observable<any>{
+return this.http.get(`${this.viewTest_endpoint}`);
+}
+>>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
 }
 
 deleteTest(id:number):Observable<any>{

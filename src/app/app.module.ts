@@ -33,9 +33,17 @@ import { RegisterComponent } from './register/register.component';
 import { DoctorScheduleComponent } from './doctor/doctor-schedule/doctor-schedule.component';
 import { PatientDetailsComponent } from './patient/patient-details/patient-details.component';
 import { UpdatePatientComponent } from './patient/patient-details/update-patient/update-patient.component';
+<<<<<<< HEAD
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { UpdateappointmentComponent } from './appointment/reschedule/updateappointment/updateappointment.component';
 
+=======
+import { DoctordetailsComponent } from './doctor/doctordetails/doctordetails.component';
+import { UpdatedoctorComponent } from './doctor/doctordetails/updatedoctor/updatedoctor.component';
+import { LogoutComponent } from './logout/logout.component';
+import { AddspectaclesComponent } from './spectacles/addspectacles/addspectacles.component';
+import { UpdatespectaclesComponent } from './spectacles/updatespectacles/updatespectacles.component';
+>>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
 
 
 
@@ -48,10 +56,14 @@ const appRoutes:Routes=[
   {path:'report/:patientid',component : ReportComponent},
   {path:'view',component: ViewappointmentComponent},
   {path:'contact',component: ContactComponent},
-  {path:'spec',component: SpectaclesComponent},
+  
   {path:'book',component: BookappointmentComponent},
   {path:'cancel',component: CancelComponent},
   {path:'reschedule',component: RescheduleComponent},
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
   {path:'test',component: TestComponent},
   {path:'viewreport',component:  ViewreportComponent}, 
   {path:'docActivity',component: DoctorActivityComponent},
@@ -66,10 +78,19 @@ const appRoutes:Routes=[
   {path:'schedule',component: DoctorScheduleComponent},
   {path:'patient/:patientId/details',component: PatientDetailsComponent},
   {path:'patient/:patientId/details/update',component: UpdatePatientComponent},
+<<<<<<< HEAD
   {path:'patient/:patientId',component: TestComponent},
   {path:'appointment/:appointmentId/details',component: RescheduleComponent},
   {path:'appointment/:appointmentId/details/update',component: UpdateappointmentComponent},
   {path:'appointment/:patientId',component: BookappointmentComponent},
+=======
+  {path:'report/:patientId',component: ReportComponent},
+  {path:'spectacles',component: SpectaclesComponent},
+  {path:'admin',component: AdminComponent},
+  {path:'doctor/:doctorId/details',component: DoctordetailsComponent},
+  {path:'doctor/:doctorId/details/update',component: UpdatedoctorComponent},
+  {path:'appointment/:doctorId/view',component: ViewappointmentComponent},
+>>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
 ];
 
 @NgModule({
@@ -104,8 +125,17 @@ const appRoutes:Routes=[
     DoctorScheduleComponent,
     PatientDetailsComponent,
     UpdatePatientComponent,
+<<<<<<< HEAD
     UpdateappointmentComponent
 
+=======
+    DoctordetailsComponent,
+    UpdatedoctorComponent,
+    LogoutComponent,
+    AddspectaclesComponent,
+    UpdatespectaclesComponent,
+    
+>>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
   ],
   imports: [
     BrowserModule,

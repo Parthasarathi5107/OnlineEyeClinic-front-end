@@ -15,7 +15,13 @@ import { DoctorService } from '../service/doctor.service';
 })
 export class LoginComponent implements OnInit {
 
+<<<<<<< HEAD
   roles = ['patient', 'doctor'];
+=======
+
+
+  roles = ['patient', 'doctor','admin'];
+>>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
   patients:Patient[] = [];
   doctors: Doctor[] = [];
   admins: Admin[]=[];
@@ -51,8 +57,10 @@ export class LoginComponent implements OnInit {
   {
     if (this.role.value == "patient")
       this.patientLogin();
-    else
+    else if(this.role.value=="doctor")
       this.doctorLogin();
+    else
+    this.adminLogin();
   } 
 
   patientLogin()
@@ -111,4 +119,83 @@ export class LoginComponent implements OnInit {
 
     this.showErrorMessage = false;
   }
+<<<<<<< HEAD
+=======
+
+  adminLogin()
+  {
+    this.userService.getUsersList().subscribe(data => 
+      { 
+                this.admins = data;
+
+        this.admins.forEach(admin => 
+          {
+            if(admin.role=='admin'){
+            if (admin.userName == this.loginForm.get('userName').value)
+            { 
+              if (admin.password == this.loginForm.get('password').value){
+                // this.currentPatient = patient;
+                console.log("login successfull");
+                this.router.navigate(['admin']);
+                }
+            }
+          }
+          else {this.showErrorMessage = true;
+                console.log("invalid credentials");}
+          
+          });
+
+      //   if (this.currentPatient == null){
+      //     this.showErrorMessage = true;
+      //     console.log("invalid credentials");}
+      //   else{
+      //     this.router.navigate(['patient',this.currentPatient.userId]);
+      //     console.log("Login successful");}
+        
+      // });
+
+    this.showErrorMessage = false;
+  });
+}
+
+  
+  // onSubmit()
+  // {
+  //   if (this.role.value == "patient"){
+  //     this.patientLogin(this.loginForm.value);
+  //     console.log(this.loginForm.value);}
+  //   else
+  //     this.doctorLogin(this.loginForm.value);
+  // } 
+
+  // doctorLogin(doctor: Doctor)
+  // {
+  //   this.userService.getLogin(doctor)
+  //   .subscribe(data => {
+  //     console.log("success");
+  //     this.currentDoctor=doctor;
+  //     this.router.navigate(['doctor',this.currentDoctor.userId]);
+  //   },
+  //   error => console.log(error));
+
+  //   console.log(this.loginForm.value)
+  //   console.log("failed")
+  // }
+
+  // patientLogin(patient: Patient)
+  // {
+  //   this.userService.getLogin(patient)
+  //   .subscribe(data => {
+  //     console.log("success");
+  //     this.currentPatient=patient;
+  //     this.router.navigate(['patient',this.currentPatient.userId]);
+  //   },
+  //   error => console.log(error));
+
+  //   console.log(this.loginForm.value)
+  //   console.log("failed")
+  // }
+  
+  
+>>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
 }

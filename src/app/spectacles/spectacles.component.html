@@ -1,1 +1,24 @@
+<<<<<<< HEAD
 
+=======
+<table>
+    <tr>
+        <th></th>
+        <th>id</th>
+        <th>model</th>
+        <th>Description</th>
+        <th>Rating</th>
+        <th>Cost</th>
+        
+    </tr>
+    <tr *ngFor="let spec of allSpecs">
+        <td><img src="assets\download.png" width="100"></td>
+    <td>{{spec.spectaclesId}}</td>
+    <td>{{spec.spectaclesModel}}</td>
+    <td>{{spec.spectaclesDescription}}</td>
+    <td>{{spec.spectaclesRating}}</td>
+    <td>{{spec.spectaclesCost|currency:"INR":"symbol"}}</td>
+    
+</tr>
+</table>
+>>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2

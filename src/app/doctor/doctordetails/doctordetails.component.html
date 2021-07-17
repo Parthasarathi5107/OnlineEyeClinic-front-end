@@ -1,0 +1,38 @@
+<div class="card">
+    <div class="card-title">
+        <h4>Account Details</h4>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Patient Id</th>
+                    <td>{{doctor.userId}}</td>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td>{{doctor.userName}}</td>
+                </tr>
+                <tr>
+                    <th>Age</th>
+                    <td>{{doctor.doctorConsultationTime}}</td>
+                </tr>
+                <tr>
+                    <th>Mobile Number</th>
+                    <td>{{doctor.doctorMobile}}</td>
+                </tr>
+               <tr>
+                    <th>Email</th>
+                    <td>{{doctor.doctorEmail}}</td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>{{doctor.address}}</td>
+                </tr>
+                
+            </tbody>
+        </table>
+        <button class="btn btn-primary" type="button" (click)="goUpdate()">Edit</button>
+        &nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-primary" (click)="backToPortal()">Back to Portal</button>
+</div>

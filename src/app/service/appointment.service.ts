@@ -34,6 +34,21 @@ export class AppointmentService {
 
   cancelAppointment(id:number):Observable<any>{
     return this.http.delete(`${this.cancelAppointment_endpoint}/${id}`, { responseType: 'text' });
+<<<<<<< HEAD
+=======
+  }
+  
+  viewById(id:number):Observable<any>{
+    return this.http.get(`${this.viewById_endpoint}/${id}`);
+  }
+
+  viewByDate(date:Date):Observable<any>{
+    return this.http.get(`${this.viewByDate_endpoint}/${date}`);
+  }
+
+  viewByDateAndName(date:Date,doctorName : string):Observable<any>{
+    return this.http.get(`${this.viewByDateAndName_endpoint}/${date}/${doctorName}`);
+>>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
   }
   
   viewById(id:number):Observable<any>{

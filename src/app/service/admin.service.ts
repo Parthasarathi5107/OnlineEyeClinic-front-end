@@ -27,5 +27,8 @@ export class AdminService {
     return this.http.delete(`${this.deleteAdmin_endpoint}/${id}`, { responseType: 'text' });
   }
   
+<<<<<<< HEAD
  
+=======
+>>>>>>> 58bbcc002b5edbce110e81beb905bf142f43aed2
 }
