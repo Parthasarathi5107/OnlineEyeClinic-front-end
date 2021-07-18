@@ -45,6 +45,7 @@ import { ManagedoctorComponent } from './admin/managedoctor/managedoctor.compone
 import { ManagetestComponent } from './admin/managetest/managetest.component';
 import { ManagespectaclesComponent } from './admin/managespectacles/managespectacles.component';
 import { DoctorScheduleComponent } from './doctor/doctor-schedule/doctor-schedule.component';
+import { VideoconsultationComponent } from './videoconsultation/videoconsultation.component';
 
 
 
@@ -91,6 +92,9 @@ const appRoutes:Routes=[
   {path:'spectacles/update',component: UpdatespectaclesComponent},
   {path:'spectacles/delete',component: SpectaclesComponent},
   {path:'admin/:adminId/update',component: UpdateadminComponent},
+  {path:'VideoConsultation',component: VideoconsultationComponent},
+  {path:'test/add',component: AddtestComponent,},
+  {path:'addreport',component: AddreportComponent},
 ];
 
 @NgModule({
@@ -136,6 +140,7 @@ const appRoutes:Routes=[
     ManagetestComponent,
     ManagespectaclesComponent,
     DoctorScheduleComponent,
+    VideoconsultationComponent,
     
   ],
   imports: [

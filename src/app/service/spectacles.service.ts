@@ -13,12 +13,12 @@ export class SpectaclesService {
   private baseUrl = 'http://localhost:9999/spectacles';
   private addSpectacles_endpoint = this.baseUrl+'/add';
   private updateSpectacles_endpoint = this.baseUrl+'/update';
-  private deleteSpectacles_endpoint = this.baseUrl+'/delete/{spectaclesId}';
-  private viewSpectaclesById_endpoint = this.baseUrl+'/view/{spectaclesId}';
+  private deleteSpectacles_endpoint = this.baseUrl+'/delete';
+  private viewSpectaclesById_endpoint = this.baseUrl+'/view';
   private viewSpectacles_endpoint = this.baseUrl+'/viewAll';
-  private viewByRating_endpoint = this.baseUrl+'/rating/{rating}';
-  private viewSpectaclesByModel_endpoint = this.baseUrl+'/viewByModel/{model}';
-  private viewByCost_endpoint = this.baseUrl+'/viewByCost/{range1}/{range2}';
+  private viewByRating_endpoint = this.baseUrl+'/rating';
+  private viewSpectaclesByModel_endpoint = this.baseUrl+'/viewByModel';
+  private viewByCost_endpoint = this.baseUrl+'/viewByCost';
   private viewByCostHigh_endpoint = this.baseUrl+'/viewByCost/h';
   private viewByCostlow_endpoint = this.baseUrl+'/viewByCost/l';
 

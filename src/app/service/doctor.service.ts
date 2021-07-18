@@ -12,11 +12,11 @@ export class DoctorService {
   private baseUrl = 'http://localhost:9999/doctor';
   private addDoctor_endpoint = this.baseUrl+'/add';
   private viewAllDoctors_endpoint = this.baseUrl+'/viewAll';
-  private viewById_endpoint = this.baseUrl+'/view/{doctorId}';
-  private deleteDoc_endpoint = this.baseUrl+'/delete/{doctorId}';
-  private viewByDateAndName_endpoint = this.baseUrl+'/viewAppointments/{date}/{doctorName}';
+  private viewById_endpoint = this.baseUrl+'/view';
+  private deleteDoc_endpoint = this.baseUrl+'/delete';
+  private viewByDateAndName_endpoint = this.baseUrl+'/viewAppointments';
   private addTest_endpoint = this.baseUrl+'/test';
-  private viewDoctorByName_endpoint = this.baseUrl+'/viewByName/{doctorName}';
+  private viewDoctorByName_endpoint = this.baseUrl+'/viewByName';
 
   constructor(private http: HttpClient) { }
 

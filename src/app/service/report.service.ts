@@ -12,9 +12,9 @@ export class ReportService {
   private baseUrl = 'http://localhost:9999/report';
   private addReport_endpoint = this.baseUrl+'/add';
   private updateReport_endpoint = this.baseUrl+'/update';
-  private deleteReport_endpoint = this.baseUrl+'/delete/{reportId}';
-  private viewReportById_endpoint = this.baseUrl+'/view/{reportId}/{patientId}';
-  private viewByDate_endpoint = this.baseUrl+'/viewByDate/{date}';
+  private deleteReport_endpoint = this.baseUrl+'/delete';
+  private viewReportById_endpoint = this.baseUrl+'/view';
+  private viewByDate_endpoint = this.baseUrl+'/viewByDate';
   private viewSpectacles_endpoint = this.baseUrl+'/spectacles';
 
   addReport(report: Report): Observable<any>
