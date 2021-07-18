@@ -46,8 +46,13 @@ import { UpdateadminComponent } from './admin/updateadmin/updateadmin.component'
 import { ManagedoctorComponent } from './admin/managedoctor/managedoctor.component';
 import { ManagetestComponent } from './admin/managetest/managetest.component';
 import { ManagespectaclesComponent } from './admin/managespectacles/managespectacles.component';
+<<<<<<< HEAD
 import { AppRoutingModule } from './app-routing.module';
 import { CommonModule } from '@angular/common';
+=======
+import { DoctorScheduleComponent } from './doctor/doctor-schedule/doctor-schedule.component';
+import { VideoconsultationComponent } from './videoconsultation/videoconsultation.component';
+>>>>>>> 09f215b500d6b61929bb16d57b8757c19cf8122f
 
 
 
@@ -65,6 +70,7 @@ import { CommonModule } from '@angular/common';
 //   {path:'view',component: ViewappointmentComponent},
 //   {path:'contact',component: ContactComponent},
   
+<<<<<<< HEAD
 //   {path:'book',component: BookappointmentComponent},
 //   {path:'cancel',component: CancelComponent},
 //   {path:'reschedule',component: RescheduleComponent},
@@ -108,6 +114,41 @@ import { CommonModule } from '@angular/common';
 //   {path:'spectacles/delete',component: SpectaclesComponent},
 //   {path:'admin/:adminId/update',component: UpdateadminComponent},
 // ];
+=======
+  {path:'test',component: TestComponent},
+  {path:'viewreport',component:  ViewreportComponent}, 
+  {path:'docActivity',component: DoctorActivityComponent},
+  {path:'createtest',component: AddtestComponent},
+  {path:'addreport',component: AddreportComponent},
+
+  {path:'patient/:id',component: PatientComponent},
+  {path:'doctor/:id',component: DoctorComponent},
+  {path:'login',component: LoginComponent},
+  {path:'register',component: RegisterComponent},
+  {path:'forget-password',component: ForgotPasswordComponent},
+  {path:'patient/:patientId/details',component: PatientDetailsComponent},
+  {path:'patient/:patientId/details/update',component: UpdatePatientComponent},
+  {path:'report/:patientId',component: ReportComponent},
+  {path:'spectacles',component: SpectaclesComponent},
+  {path:'admin/:adminId',component: AdminComponent},
+  {path:'doctor/:doctorId/details',component: DoctordetailsComponent},
+  {path:'doctor/:doctorId/details/update',component: UpdatedoctorComponent},
+  {path:'appointment/:doctorId/view',component: ViewappointmentComponent},
+  {path:'managedoctor',component: ManagedoctorComponent},
+  {path:'test/manage',component: ManagetestComponent},
+  {path:'spectacles/manage',component: ManagespectaclesComponent},
+  {path:'adddoctor',component: AdddoctorComponent},
+  {path:'viewAlldoctor',component: DoctorScheduleComponent},
+  {path:'spectacles/add',component: AddspectaclesComponent},
+  {path:'spectacles/viewAll',component: SpectaclesComponent},
+  {path:'spectacles/update',component: UpdatespectaclesComponent},
+  {path:'spectacles/delete',component: SpectaclesComponent},
+  {path:'admin/:adminId/update',component: UpdateadminComponent},
+  {path:'VideoConsultation',component: VideoconsultationComponent},
+  {path:'test/add',component: AddtestComponent,},
+  {path:'addreport',component: AddreportComponent},
+];
+>>>>>>> 09f215b500d6b61929bb16d57b8757c19cf8122f
 
 @NgModule({
   declarations: [
@@ -154,6 +195,7 @@ import { CommonModule } from '@angular/common';
     ManagetestComponent,
     ManagespectaclesComponent,
     DoctorScheduleComponent,
+    VideoconsultationComponent,
     
   ],
   imports: [

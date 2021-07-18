@@ -1,0 +1,13 @@
+table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: larger;
+    font-family: sans-serif;
+    min-width: 100%;
+    box-shadow: 0 0 20px rgba(70, 15, 173, 0.15);
+}
+tr{
+    background-color: lawngreen;
+    color:ivory;
+    text-align: left;
+}

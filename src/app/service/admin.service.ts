@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 09f215b500d6b61929bb16d57b8757c19cf8122f
 import { Admin } from './../details/admin';
 
 import { Injectable } from '@angular/core';

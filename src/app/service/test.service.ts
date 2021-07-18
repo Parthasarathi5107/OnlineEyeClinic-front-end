@@ -14,8 +14,8 @@ export class TestService {
   private baseUrl = 'http://localhost:9999/test';
   private addTest_endpoint = this.baseUrl+'/add';
   private updateTest_endpoint = this.baseUrl+'/update';
-  private deleteTest_endpoint = this.baseUrl+'/delete/{testId}';
-  private viewTestById_endpoint = this.baseUrl+'/view/{testId}';
+  private deleteTest_endpoint = this.baseUrl+'/delete';
+  private viewTestById_endpoint = this.baseUrl+'/view';
   private viewTest_endpoint = this.baseUrl+'/viewAll';
 
   addTest(test: Test): Observable<any>
