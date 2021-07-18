@@ -1,3 +1,4 @@
+import { Patient } from './../details/patient';
 import { Test } from './../details/test';
 import { PatientService } from './../service/patient.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -17,14 +18,26 @@ export class TestComponent implements OnInit {
   currentPatienttests: Test[] = [];
   patientId: number;
   testDetails: Test[];
- 
+  
   
   ngOnInit(): void {
+
+    this.route.paramMap.subscribe(params =>
+      {
+        this.patientId = +params.get("id");
+      });
     
     console.log(this.allTests)
     this.testService.viewTest().subscribe(data =>{
-      console.log(data);
-      this.allTests = data;
+      this.testDetails=data;
+      this.testDetails.forEach(element => {
+        if(element.patient.userId == this.patientId){
+          console.log(data);
+          this.allTests = data;
+        }
+        
+      });
+      
     });
   }
 

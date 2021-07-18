@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewreportComponent implements OnInit {
 
-  constructor(private reportService:ReportService,private route: ActivatedRoute, private router: Router,private patientService:PatientService) { }
+  constructor(private reportService:ReportService,private route: ActivatedRoute, private router: Router) { }
 
   allReport: Report[] = [];
   currentPatienttests: Report[] = [];
@@ -52,9 +52,15 @@ export class ViewreportComponent implements OnInit {
   // }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe(params =>
+                {
+                  this.patientId = +params.get("id");
+                  console.log(this.patientId);
+                });
+                       
     
     console.log(this.allReport)
-    this.reportService.viewReportByPatientId(2).subscribe(data =>{
+    this.reportService.viewReportByPatientId(this.patientId).subscribe(data =>{
       console.log(data);
       this.allReport = data;
     });

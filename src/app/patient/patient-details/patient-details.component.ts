@@ -1,3 +1,4 @@
+import { User } from './../../details/user';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Patient } from 'src/app/details/patient';

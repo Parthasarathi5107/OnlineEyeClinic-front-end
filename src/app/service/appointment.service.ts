@@ -14,10 +14,10 @@ export class AppointmentService {
   private getAllAppointment_endpoint = this.address+'/viewAll';
   private bookAppointment_endpoint = this.address+'/book';
   private updateAppointment_endpoint = this.address+'/update';
-  private cancelAppointment_endpoint = this.address+'/cancel/{appointmentId}';
-  private viewById_endpoint = this.address+'/view/{appointmentId}';
-  private viewByDate_endpoint = this.address+'/viewByDate/{date}';
-  private viewByDateAndName_endpoint = this.address+'//viewByName/{date}/{doctorName}';
+  private cancelAppointment_endpoint = this.address+'/cancel';
+  private viewById_endpoint = this.address+'/view';
+  private viewByDate_endpoint = this.address+'/viewByDate';
+  private viewByDateAndName_endpoint = this.address+'//viewByName';
 
   getAllAppointments():Observable<any>
   {

@@ -1,65 +1,3 @@
-<<<<<<< HEAD
-<!-- <hr/>
-<table >
-    <tr>
-        <td><b>testId</b></td>
-        <td><b>testName</b></td>
-        <td><b>type</b></td>
-        <td><b>description</b></td>
-        <td><b>cost</b></td>
-        <td><b>patientId</b></td>
-    </tr>
-    <tr *ngFor="let item of test">
-        <td>{{item.testId}}</td>
-        <td>{{item.testName}}</td>
-        <td>{{item.testType}}</td>
-        <td>{{item.testDescription}}</td>
-        <td>{{item.testCost}}</td>
-        <td>{{item.patient}}</td>
-    </tr>
-</table> -->
-
-<div class="card">
-    <div class="card-title">
-        <h4>Admin Update Form</h4>
-    </div>
-    <div class="card-body">
-        <form novalidate #updateForm="ngForm">
-            <div class="form-group">
-                <label>userId : </label>
-                <input type="text" class="form-control" value="{{admin.userId}}"
-                [(ngModel)]= "admin.userId" name="userId" />
-            </div>
-            <div class="form-group">
-                <label>password : </label>
-                <input type="text" class="form-control" value="{{admin.password}}"
-                [(ngModel)]= "admin.password" name="password" />
-            </div>
-            <div class="form-group">
-                <label>userName: </label>
-                <input type="text" class="form-control" value="{{admin.userName}}"
-                [(ngModel)]= "admin.userName" name="userName" />
-            </div>
-            <div class="form-group">
-                <label>role: </label>
-                <input type="text" class="form-control" value="{{admin.role}}"
-                [(ngModel)]= "admin.role" name="role" />
-            </div>
-            <div class="form-group">
-                <label>email: </label>
-                <input type="text" class="form-control" value="{{admin.email}}"
-                [(ngModel)]= "admin.email" name="email" />
-            </div>
-            <div class="form-group">
-                <label>mobile: </label>
-                <input type="text" class="form-control" value="{{admin.mobile}}"
-                [(ngModel)]= "admin.mobile" name="mobile" />
-            </div>
-        </form>
-    </div>
-</div>
-<button type="button" class="btn btn-primary" (click)="update()">Confirm</button>
-=======
 <div class="card-title">
     <h2>Hi {{admin.userName}} , welcome to your portal</h2>
   </div>
@@ -71,4 +9,3 @@
         <td><a routerLink="/spectacles/manage">Manage Spectacles</a></td>
       </tr>
     </table>
->>>>>>> 70a03947fe1d56d333771e51e9bda5e65e24607a

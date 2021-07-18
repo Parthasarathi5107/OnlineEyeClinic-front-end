@@ -13,7 +13,7 @@ export class AdminService {
   private baseUrl='http://localhost:9999/admin';
   private addAdmin_endpoint = this.baseUrl+'/add';
   private updateAdmin_endpoint = this.baseUrl+'/update';
-  private deleteAdmin_endpoint = this.baseUrl+'/delete/{adminId}';
+  private deleteAdmin_endpoint = this.baseUrl+'/delete';
 
   addAdmin(admin: Admin): Observable<any>{
     return this.http.post(`${this.addAdmin_endpoint}`, admin);
