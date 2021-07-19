@@ -39,10 +39,10 @@ import { UpdatetestComponent } from './test/updatetest/updatetest.component';
 import { DoctorAppointmentComponent } from './doctor/doctor-appointment/doctor-appointment.component';
 import { ViewtestComponent } from './test/viewtest/viewtest.component';
 import { DoctorCreatetestComponent } from './doctor/doctor-createtest/doctor-createtest.component';
+import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [{path:'',redirectTo:'login',pathMatch:'full'},
 {path:'appointment/:patientId',component : AppointmentComponent},
-{path:'report/:patientid',component : ReportComponent},
 {path:'appointment/:patientId/view',component: ViewappointmentComponent},
 {path:'doctorAppointment/:doctorId/view',component: DoctorAppointmentComponent},
 {path:'contact',component: ContactComponent},
@@ -68,8 +68,8 @@ const routes: Routes = [{path:'',redirectTo:'login',pathMatch:'full'},
 {path:'patient/:patientId/details/update',component: UpdatePatientComponent},
 
 {path:'patient/:patientId',component: TestComponent},
-{path:'appointment/:appointmentId/details',component: RescheduleComponent},
-{path:'appointment/:appointmentId/details/update',component: UpdateappointmentComponent},
+{path:'appointment/:patientId/details',component: RescheduleComponent},
+{path:'appointment/:patientId/details/update',component: UpdateappointmentComponent},
 // {path:'appointment/:patientId',component: BookappointmentComponent},
 {path:'report/:patientId',component: ReportComponent},
 {path:'spectacles',component: SpectaclesComponent},
@@ -98,6 +98,8 @@ const routes: Routes = [{path:'',redirectTo:'login',pathMatch:'full'},
 {path:'view',component: VideoconsultationComponent},
 {path:'home',component: HomeComponent},
 {path:'doctorTest/:doctorId',component: DoctorCreatetestComponent},
+{path:'doctorReport/:doctorId/update',component: UpdatereportComponent},
+{path:'logout',component: LogoutComponent},
 
 ];
 

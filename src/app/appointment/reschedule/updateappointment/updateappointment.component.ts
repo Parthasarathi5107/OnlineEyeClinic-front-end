@@ -18,49 +18,53 @@ import { Time } from '@angular/common';
 })
 export class UpdateappointmentComponent implements OnInit {
 
-  patientId: number;
-  patientResponse:PatientResponse;
-  doctorResponse:DoctorResponse;
-
+ 
   appointmentObj:Appointment;
-  date:Date;
-  time:Time;
   doctorObj:Doctor;
   patientObj:Patient;
+
   
+  constructor(private appointmentService:AppointmentService,private router: Router,private route:ActivatedRoute,private patientService:PatientService,private doctorService:DoctorService) { }
+
   registerForm: FormGroup;
 
-    appointmentId :FormControl;
-    appointmentDate :FormControl;
-    appointmentTime :FormControl;
-    doctor :FormControl;
-    // patient :FormControl;
-
+  appointmentId : FormControl;
+  appointmentDate :FormControl;
+	appointmentTime :FormControl;
+	doctor :FormControl;
   formSubmitted = false;
 
-  constructor(private appointmentService:AppointmentService,private router: Router,private route:ActivatedRoute,private patientService:PatientService,private doctorService:DoctorService) { }
+  
+  patientId: number;
+  patientResponse: PatientResponse;
 
 
   ngOnInit(): void {
-    this.appointmentId = new FormControl('', [Validators.required]);
+
+    this.appointmentId = new FormControl('', Validators.required);
     this.appointmentDate = new FormControl('', Validators.required);
     this.appointmentTime = new FormControl('', Validators.required);
     this.doctor = new FormControl('', Validators.required);
-    // this.patient = new FormControl('', Validators.required);
+  
+  
     
 
     this.registerForm = new FormGroup(
       {
-        'appointmentId': this.appointmentId,
+        'appointmentId':this.appointmentId,
         'appointmentDate': this.appointmentDate,
         'appointmentTime': this.appointmentTime,
         'doctor':  this.doctor,
-        // 'patient': this.patient
         
       }
     );
 
+
+
+    console.log(this.registerForm.value)
     
+
+
     this.route.paramMap.subscribe(params =>
       {
         this.patientId = +params.get("patientId");
@@ -73,36 +77,28 @@ export class UpdateappointmentComponent implements OnInit {
         console.log(this.patientResponse)
       }, error => console.log(error));
 
+    
+     
   }
+
 
   onSubmit()
   {
-
-    this.doctorService.getDoctor(this.doctor.value).subscribe(data =>
-      {
-        console.log(data);
-        this.doctorResponse = data;
-        console.log(this.doctorResponse)
-      }, error => console.log(error));
-    console.log(this.doctor.value);
-    // console.log(this.registerForm.value);
-
-    this.date=this.appointmentDate.value;
-    this.time=this.appointmentTime.value;
-    this.doctorObj.userId=this.doctorResponse.userId;
-    this.patientObj.userId=this.patientResponse.userId;
     
-    this.appointmentObj.appointmentDate=this.date;
-    this.appointmentObj.appointmentTime=this.time;
-    this.appointmentObj.doctor=this.doctorObj;
-    this.appointmentObj.patient=this.patientObj;
+    var doc = new Doctor(this.registerForm.get('doctor').value,'','','','','','','');
+    this.doctorObj = doc;
+    var pat = new Patient(this.patientId,'','','',0,0,'',null,'');
+    this.patientObj = pat;
+    var app = new Appointment(this.registerForm.get('appointmentId').value,this.registerForm.get('appointmentDate').value,this.registerForm.get('appointmentTime').value,this.doctorObj,'',this.patientObj);
+    this.appointmentObj=app;
+    console.log(this.appointmentObj);
       this.updateAppointment(this.appointmentObj);
-
+     
+    
   }
-
   updateAppointment(appointment: Appointment)
   {
-    // appointment.patient.userId=this.patientId;
+   
     this.appointmentService.updateAppointment(appointment)
     .subscribe(data => {
       console.log(data)

@@ -1,3 +1,4 @@
+import { Patient } from 'src/app/details/patient';
 import { DoctorService } from 'src/app/service/doctor.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Report } from './../../details/report';
@@ -5,6 +6,8 @@ import { ReportService } from './../../service/report.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { DoctorResponse } from 'src/app/response/doctor-response';
+import { Test } from 'src/app/details/test';
+import { TestResponse } from 'src/app/response/test-response';
 
 @Component({
   selector: 'app-addreport',
@@ -27,6 +30,11 @@ export class AddreportComponent implements OnInit {
 
   doctorId: number;
   doctor: DoctorResponse;
+
+  testObj : Test;
+  patientObj : Patient;
+  reportObj : Report;
+
 
   constructor(private reportService: ReportService, private router: Router,private route: ActivatedRoute,private doctorService: DoctorService) { }
 
@@ -71,8 +79,15 @@ export class AddreportComponent implements OnInit {
   onSubmit()
   {
     
-      this.addReport(this.registerForm.value);
-    
+    var test = new Test(this.registerForm.get('typeOfTest').value,'','','',0,null);
+    this.testObj = test;
+    var pat = new Patient(this.registerForm.get('patient').value,'','','',0,0,'',null,'');
+    this.patientObj = pat;
+    var rep = new Report(0,this.registerForm.get('dateOfReport').value,this.registerForm.get('descriptionOfReport').value,
+                           this.registerForm.get('visualAcuity').value,this.registerForm.get('visualAcuityNear').value,
+                             this.registerForm.get('visualAcuityDistance').value,this.testObj,this.patientObj);
+    this.reportObj=rep;
+    this.addReport(this.reportObj);
   }
 
   addReport(report: Report)

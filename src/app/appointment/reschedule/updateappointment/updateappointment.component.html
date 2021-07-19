@@ -3,11 +3,7 @@
     <div class="card-body">
         <h4>Reschedule Appointment</h4>
         <div class="alert alert-info alert-dismissible " role="alert" *ngIf="formSubmitted">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-              <span class="sr-only">Close</span>
-            </button>
-            <strong>Appointment updated successfully! </strong><a routerLink="/appointment/{{patientId}}/reschedule">Go back to manage appointment pagee</a>
+            <strong>Appointment updated successfully! </strong><a routerLink="/appointment/{{patientId}}/reschedule">Go back to manage appointment page</a>
         </div>
         <div class="row">
             <div class="col-md-6">
@@ -47,17 +43,6 @@
                     </div>
 
                     
-                    <!-- <div class="form-group">
-                        <label>Patient Id </label>
-                        <input type="text" class="form-control" formControlName="patient" 
-                        [ngClass]="{'is-invalid':patient.errors && (patient.touched || patient.dirty), 'is-valid': patient.valid}" />
-                        <div class="invalid-feedback">
-                            <strong>patient id is required.</strong>
-                        </div>
-                    </div> -->
-                   
-
-    
                     
                     
                     <button type="submit" class="btn btn-primary" (click)="onSubmit()">Confirm</button>

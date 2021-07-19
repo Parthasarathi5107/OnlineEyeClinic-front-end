@@ -2,12 +2,55 @@
     <h2>Hi {{doctor?.doctorName}} , welcome to your portal</h2>
   </div>
   <table>
-      <tr>
-        <td><a routerLink="/doctor/{{doctor?.userId}}/details">My Account</a></td>
-        <td><a routerLink="/doctorAppointment/{{doctor?.userId}}/view">Appointments</a></td>
-        <td><a routerLink="/doctorTest/{{doctor?.userId}}">Create a Test</a></td>
-        <td><a routerLink="/doctorReport/{{doctor?.userId}}">Generate Report</a></td>
-        
-      </tr>
+    <tr>
+      <td>
+    <div class="card text-white bg-danger mb-3" style="width: 18rem;">
+      <img class="card-img-top" src="assets\acc.png" >
+      <div class="card-body">
+        <p class="card-text">Account details</p>
+        <a routerLink="/doctor/{{doctor?.userId}}/details" class="btn btn-primary">View Profile</a>
+      </div>
+    </div>
+  </td>
+    <td><div class="card text-white bg-danger mb-3" style="width: 18rem;height: 26rem;">
+      <img class="card-img-top" src="assets/appoint.jpeg" >
+      <div class="card-body">
+        <p class="card-text">Appointment</p>
+        <a routerLink="/doctorAppointment/{{doctor?.userId}}/view" class="btn btn-primary">View Profile</a>
+      </div>
+    </div>
+
+    <td>
+    <div class="card text-white bg-danger mb-3" style="width: 18rem;height: 26rem;">
+      <img class="card-img-top" src="assets\test.jpeg" style="height: 200%;">
+      <div class="card-body">
+        <p class="card-text">Create a Test</p>
+        <a routerLink="/doctorTest/{{doctor?.userId}}" class="btn btn-primary">Create</a>
+      </div>
+    </div>
+  </td>
+
+  <td>
+    <div class="card text-white bg-danger mb-3" style="width: 18rem;height: 26rem;">
+      <img class="card-img-top" src="assets\report.jpg" style="height: 200%;">
+      <div class="card-body">
+        <p class="card-text">Generate Report</p>
+        <a routerLink="/doctorReport/{{doctor?.userId}}" class="btn btn-primary">Generate</a>
+      </div>
+    </div>
+  </td>
+
+  <td>
+    <div class="card text-white bg-danger mb-3" style="width: 18rem;height: 26rem;">
+      <img class="card-img-top" src="assets\report.jpg" style="height: 200%;">
+      <div class="card-body">
+        <p class="card-text">Update Report</p>
+        <a routerLink="/doctorReport/{{doctor?.userId}}/update" class="btn btn-primary">Update</a>
+      </div>
+    </div>
+  </td>
+
+    </tr>
+     
     </table>
   

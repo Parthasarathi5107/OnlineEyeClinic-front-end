@@ -2,6 +2,15 @@
 export class Doctor{
 
     userId :number;
+
+    public get(): number {
+        return this.userId;
+    }
+
+    public set(userId: number): void {
+        this.userId = userId;
+    }
+
 	password :string;
 	userName :string;
     role :string;
@@ -9,6 +18,9 @@ export class Doctor{
 	doctorMobile :string;
     doctorEmail :string;
 	address :string;
+
+
+
 
 
   constructor(

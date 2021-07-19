@@ -1,3 +1,5 @@
+import { ReportResponse } from './../../response/report-response';
+import { PatientResponse } from './../../response/patient-response';
 import { ReportService } from './../../service/report.service';
 import { PatientService } from 'src/app/service/patient.service';
 import { Report } from './../../details/report';
@@ -11,68 +13,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewreportComponent implements OnInit {
 
-  constructor(private reportService:ReportService,private route: ActivatedRoute, private router: Router) { }
+  constructor(private reportService:ReportService,private route: ActivatedRoute, private router: Router,private patientService:PatientService) { }
 
-  allReport: Report[] = [];
-  currentPatienttests: Report[] = [];
+  allReport: ReportResponse[];
   patientId: number;
-  reportDetails: Report[];
+  patient:PatientResponse;
 
-  // ngOnInit(): void {
-  //   this.route.paramMap.subscribe(params =>
-  //           {
-  //             this.patientId = +params.get("id");
-  //             console.log(this.patientId);
-  //           });
-          
-      
-  //         this.patientService.getPatient(this.patientId).subscribe(data =>{
-            
-  //         });
-  // }
-
-  // onClick()
-  // {
-  //   this.router.navigate(['report',this.patientId]);
-  // }
-
-  // getDetails(pId: number)
-  // {
-  //   this.reportDetails = [];
-  //   for (var i=0; i<this.currentPatienttests.length; i++)
-  //   {
-  //     if (this.currentPatienttests[i].reportId == pId)
-  //     {
-  //       this.reportService.viewReportByPatientId(pId).subscribe(data =>{
-  //         this.reportDetails = data;
-  //       });
-  //     }
-  //   }
-
-  // }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params =>
-                {
-                  this.patientId = +params.get("id");
-                  console.log(this.patientId);
-                });
-                       
-    
-    console.log(this.allReport)
-    this.reportService.viewReportByPatientId(this.patientId).subscribe(data =>{
-      console.log(data);
-      this.allReport = data;
-      this.allReport.forEach(element => {
-        if(element.patient.userId == this.patientId){
-          console.log(data);
-          this.reportDetails.push(element);
-        }
-        
+      {
+        this.patientId = +params.get("patientId");
       });
-    });
+
+    this.patientService.getPatient(this.patientId).subscribe(data =>
+      {
+        console.log(data);
+        this.patient = data;
+        console.log(this.patient)
+      }, error => console.log(error));
+
+      this.getReport();
   }
  
+  getReport()
+  {
+   this.reportService.viewReportByPatientId(this.patientId).subscribe(data=>{
+       this.allReport = data;
+   },
+   err=>
+   {
+     console.log(err.error);
+   }
+   
+   ); 
+  
+  }
 }
 
 

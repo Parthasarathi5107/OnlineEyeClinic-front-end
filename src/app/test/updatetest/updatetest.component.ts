@@ -1,3 +1,4 @@
+import { Patient } from 'src/app/details/patient';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -21,6 +22,9 @@ export class UpdatetestComponent implements OnInit {
     patient :FormControl;
 
   formSubmitted = false;
+
+  testObj:Test;
+  patientObj:Patient;
 
   constructor(private testService:TestService , private router: Router) { }
 
@@ -50,8 +54,13 @@ export class UpdatetestComponent implements OnInit {
 
   onSubmit()
   {
+    var pat = new Patient(this.registerForm.get('patient').value,'','','',0,0,'',null,'');
+    this.patientObj = pat; 
+    var test = new Test(this.registerForm.get('testId').value,this.registerForm.get('testName').value,this.registerForm.get('testType').value,
+                      this.registerForm.get('testDescription').value,this.registerForm.get('testCost').value,this.patientObj);
+    this.testObj = test;
+    this.updateTest(this.testObj);
 
-      this.updateTest(this.registerForm.value);
 
   }
 

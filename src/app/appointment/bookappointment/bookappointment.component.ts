@@ -20,8 +20,6 @@ import { Doctor } from 'src/app/details/doctor';
 export class BookappointmentComponent implements OnInit {
 
   appointmentObj:Appointment;
-  date:Date;
-  time:Time;
   doctorObj:Doctor;
   patientObj:Patient;
 
@@ -33,22 +31,20 @@ export class BookappointmentComponent implements OnInit {
   appointmentDate :FormControl;
 	appointmentTime :FormControl;
 	doctor :FormControl;
-	// patient :FormControl;
   formSubmitted = false;
 
   
   patientId: number;
   patientResponse: PatientResponse;
 
-  /**  */
-  doctorResponse:DoctorResponse;
+  
 
   ngOnInit(): void {
 
     this.appointmentDate = new FormControl('', Validators.required);
     this.appointmentTime = new FormControl('', Validators.required);
     this.doctor = new FormControl('', Validators.required);
-    // this.patient = new FormControl('', Validators.required);
+  
   
     
 
@@ -57,14 +53,14 @@ export class BookappointmentComponent implements OnInit {
         'appointmentDate': this.appointmentDate,
         'appointmentTime': this.appointmentTime,
         'doctor':  this.doctor,
-        // 'patient': this.patient
+        
       }
     );
 
 
 
     console.log(this.registerForm.value)
-    // doct:=this.doctor.value
+    
 
 
     this.route.paramMap.subscribe(params =>
@@ -83,55 +79,27 @@ export class BookappointmentComponent implements OnInit {
      
   }
 
-  // appointment:Appointment=new Appointment();
-  
 
-  getDoctor(doctorId:number)
-  {
-    this.doctorService.getDoctor(doctorId).subscribe(data =>
-      {
-        console.log(data);
-        this.doctorResponse = data;
-        console.log(this.doctorResponse)
-      }, error => console.log(error));
-
-
-  }
 
   onSubmit()
   {
-    this.doctorService.getDoctor(this.doctor.value).subscribe(data =>
-      {
-        console.log(data);
-        this.doctorResponse = data;
-        console.log(this.doctorResponse)
-      }, error => console.log(error));
-    console.log(this.doctor.value);
-    // console.log(this.registerForm.value);
-
-    this.date=this.appointmentDate.value;
-    this.time=this.appointmentTime.value;
-    this.doctorObj.userId=this.doctorResponse.userId;
-    this.patientObj.userId=this.patientResponse.userId;
     
-    this.appointmentObj.appointmentDate=this.date;
-    this.appointmentObj.appointmentTime=this.time;
-    this.appointmentObj.doctor=this.doctorObj;
-    this.appointmentObj.patient=this.patientObj;
-    // appointment:new Appointment(0,this.date,this.time,this.doctorObj,'',this.patientObj);
+    var doc = new Doctor(this.registerForm.get('doctor').value,'','','','','','','');
+    this.doctorObj = doc;
+    var pat = new Patient(this.patientId,'','','',0,0,'',null,'');
+    this.patientObj = pat;
+    var app = new Appointment(0,this.registerForm.get('appointmentDate').value,this.registerForm.get('appointmentTime').value,this.doctorObj,'',this.patientObj);
+    this.appointmentObj=app;
       this.addAppointment(this.appointmentObj);
      
-      // console.log(this.registerForm.value)
     
   }
   
   addAppointment(appointment: Appointment)
-  {console.log("inside add ")
-  console.log(appointment);
+  {
  
-    // appointment.doctor.userId=this.doctorEntityObj.userId;
     console.log(appointment);
-    // console.log(appointment);
+    
     this.appointmentService.bookAppointment(appointment)
     .subscribe(data => {
       console.log(data)

@@ -1,3 +1,4 @@
+import { Patient } from 'src/app/details/patient';
 import { DoctorService } from 'src/app/service/doctor.service';
 import { TestService } from 'src/app/service/test.service';
 import { Component, OnInit } from '@angular/core';
@@ -25,6 +26,9 @@ export class DoctorCreatetestComponent implements OnInit {
 
   doctorId: number;
   doctor: DoctorResponse;
+
+  testObj:Test;
+  patientObj:Patient;
 
   constructor(private testService:TestService , private router: Router,private route: ActivatedRoute,private doctorService: DoctorService) { }
 
@@ -64,10 +68,16 @@ export class DoctorCreatetestComponent implements OnInit {
 
   onSubmit()
   {
-    
-      this.addTest(this.registerForm.value);
-    
+    var pat = new Patient(this.registerForm.get('patient').value,'','','',0,0,'',null,'');
+    this.patientObj = pat; 
+    var test = new Test(0,this.registerForm.get('testName').value,this.registerForm.get('testType').value,
+                      this.registerForm.get('testDescription').value,this.registerForm.get('testCost').value,this.patientObj);
+    this.testObj = test;
+    this.addTest(this.testObj);
+
+
   }
+
 
   addTest(test: Test)
   {
