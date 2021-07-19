@@ -1,0 +1,38 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <form [formGroup]="registerForm" novalidate >
+                    <div class="form-group">
+                        <label>Enter Date </label>
+                        <input type="date" class="form-control" formControlName="appointmentDate" 
+                        [ngClass]="{'is-invalid':appointmentDate.errors && (appointmentDate.touched || appointmentDate.dirty), 'is-valid': appointmentDate.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>>Date is required.</strong>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Search</button>
+                </form> 
+            </div>
+       </div>
+   </div>
+</div>
+
+<h3>Your Appointments</h3>
+<table >
+    <tr>
+        <td><b>Id</b></td>
+        <td><b>Date</b></td>
+        <td><b>Time</b></td>
+        <td><b>Doctor ID</b></td>
+        <td><b>Patient ID</b></td>
+    </tr>
+    <tr *ngFor="let item of appointment">
+        <td>{{item.appointmentId}}</td>
+        <td><a >{{item.appointmentDate}}</a></td>
+        <td>{{item.appointmentTime}}</td>
+        <td>{{item.doctorId}}</td>
+        <td>{{item.patientId}}</td>
+
+    </tr>
+</table>

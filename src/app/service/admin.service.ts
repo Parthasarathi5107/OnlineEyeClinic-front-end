@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 09f215b500d6b61929bb16d57b8757c19cf8122f
 import { Admin } from './../details/admin';
 
 import { Injectable } from '@angular/core';
@@ -24,6 +20,7 @@ export class AdminService {
   }
 
   updateAdmin(admin:Admin): Observable<any>{
+    admin.role="admin";
     return this.http.put(`${this.updateAdmin_endpoint}`, admin);
   }
 

@@ -33,5 +33,9 @@ export class SpectaclesComponent implements OnInit {
   //       });
   //     }
     
+  Buy()
+  {
+    alert("Added to cart...");
+  }
 
 }

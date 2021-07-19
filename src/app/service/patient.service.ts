@@ -36,7 +36,7 @@ export class PatientService {
 
   updatePatient(patient:Patient): Observable<any>
   {
-
+    patient.role="patient";
     return this.http.put(`${this.updatePatient_endpoint}`, patient);
   }
   

@@ -63,6 +63,13 @@ export class ViewreportComponent implements OnInit {
     this.reportService.viewReportByPatientId(this.patientId).subscribe(data =>{
       console.log(data);
       this.allReport = data;
+      this.allReport.forEach(element => {
+        if(element.patient.userId == this.patientId){
+          console.log(data);
+          this.reportDetails.push(element);
+        }
+        
+      });
     });
   }
  

@@ -40,6 +40,7 @@ export class DoctorService {
 
   updateDoctor(doctor:Doctor): Observable<any>
   {
+    doctor.role="doctor";
     return this.http.put(`${this.updateDoctor_endpoint}`, doctor);
   }
  

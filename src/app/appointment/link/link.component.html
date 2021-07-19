@@ -1,7 +1,7 @@
 
 <table>
-    <tr class="nav-link" routerLink="/book">Book Appointment</tr>
-    <tr class="nav-link" routerLink="/view">View Appointment</tr>
-    <tr class="nav-link" routerLink="/cancel">Cancel Appointment</tr>
-    <tr class="nav-link" routerLink="/reschedule">Reschedule Appointment</tr>
+    <tr class="nav-link" routerLink="/appointment/{{patient?.userId}}/book">Book Appointment</tr>
+    <tr class="nav-link" routerLink="/appointment/{{patient?.userId}}/view">View Appointment</tr>
+    <tr class="nav-link" routerLink="/appointment/{{patient?.userId}}/reschedule">Reschedule Appointment</tr>
+    <tr class="btn btn-link" routerLink="/patient/{{patient?.userId}}">Back</tr>
 </table>

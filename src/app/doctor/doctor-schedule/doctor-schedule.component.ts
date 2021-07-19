@@ -1,3 +1,4 @@
+import { DoctorResponse } from './../../response/doctor-response';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DoctorService } from './../../service/doctor.service';
 import { Doctor } from './../../details/doctor';
@@ -13,7 +14,7 @@ export class DoctorScheduleComponent implements OnInit {
   constructor(private doctorService : DoctorService,private route: ActivatedRoute, private router: Router) {
     
    }
- doctor:Doctor[] = [];
+ doctor:DoctorResponse[]=[];
 
  ngOnInit(): void {
   console.log(this.doctor)
@@ -23,18 +24,18 @@ export class DoctorScheduleComponent implements OnInit {
   });
 }
 
-  getAllDoctors()
-  {
-   this.doctorService.getDoctorList().subscribe(data=>{
-       this.doctor = data;
-   },
-   err=>
-   {
-     console.log(err.error);
-   }
+  // getAllDoctors()
+  // {
+  //  this.doctorService.getDoctorList().subscribe(data=>{
+  //      this.doctor = data;
+  //  },
+  //  err=>
+  //  {
+  //    console.log(err.error);
+  //  }
    
-   ); 
+  //  ); 
   
-  }
+  // }
 
 }

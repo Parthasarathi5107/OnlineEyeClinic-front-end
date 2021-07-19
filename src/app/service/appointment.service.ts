@@ -17,11 +17,7 @@ export class AppointmentService {
   private cancelAppointment_endpoint = this.address+'/cancel';
   private viewById_endpoint = this.address+'/view';
   private viewByDate_endpoint = this.address+'/viewByDate';
-<<<<<<< HEAD
-  private viewByDateAndName_endpoint = this.address+'//viewByName';
-=======
   private viewByDateAndName_endpoint = this.address+'/viewByName';
->>>>>>> 09f215b500d6b61929bb16d57b8757c19cf8122f
 
   getAllAppointments():Observable<any>
   {

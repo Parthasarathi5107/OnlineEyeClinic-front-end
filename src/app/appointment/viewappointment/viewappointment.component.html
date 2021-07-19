@@ -8,12 +8,12 @@
         <td><b>Doctor ID</b></td>
         <td><b>Patient ID</b></td>
     </tr>
-    <tr *ngFor="let item of appointments">
+    <tr *ngFor="let item of patientAppointments">
         <td>{{item.appointmentId}}</td>
         <td><a >{{item.appointmentDate}}</a></td>
         <td>{{item.appointmentTime}}</td>
-        <td>{{item.doctor}}</td>
-        <td>{{item.patient}}</td>
+        <td>{{item.doctorId}}</td>
+        <td>{{item.patientId}}</td>
 
     </tr>
 </table>

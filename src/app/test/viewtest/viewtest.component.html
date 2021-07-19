@@ -1,0 +1,19 @@
+<table >
+    <tr>
+        <td><b>Id</b></td>
+        <td><b>Name</b></td>
+        <td><b>Type</b></td>
+        <td><b>Description</b></td>
+        <td><b>Cost</b></td>
+        <td><b>PatientId</b></td>
+    </tr>
+     <tr *ngFor="let item of test"> 
+        <td>{{item.testId}}</td>
+        <td><a >{{item.testName}}</a></td>
+        <td>{{item.testType}}</td>
+        <td>{{item.testDescription}}</td>
+        <td>{{item.testCost|currency:"INR":"symbol"}}</td>
+        <td>{{item.patientId}}</td>
+
+    </tr> 
+</table>

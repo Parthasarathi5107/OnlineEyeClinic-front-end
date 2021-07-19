@@ -18,7 +18,6 @@ import { LinkComponent } from './appointment/link/link.component';
 import { ViewappointmentComponent } from './appointment/viewappointment/viewappointment.component';
 import { ContactComponent } from './contact/contact.component';
 import { BookappointmentComponent } from './appointment/bookappointment/bookappointment.component';
-import { CancelComponent } from './appointment/cancel/cancel.component';
 import { RescheduleComponent } from './appointment/reschedule/reschedule.component';
 import { ViewreportComponent } from './report/viewreport/viewreport.component';
 import { AddreportComponent } from './report/addreport/addreport.component';
@@ -26,7 +25,6 @@ import { UpdatereportComponent } from './report/updatereport/updatereport.compon
 import { ReportlinkComponent } from './report/reportlink/reportlink.component';
 import { TestlinkComponent } from './test/testlink/testlink.component';
 import { LoginComponent } from './login/login.component';
-import { DoctorActivityComponent } from './doctor/doctor-activity/doctor-activity.component';
 import { AddtestComponent } from './test/addtest/addtest.component';
 import { UpdatetestComponent } from './test/updatetest/updatetest.component';
 import { RegisterComponent } from './register/register.component';
@@ -46,13 +44,13 @@ import { UpdateadminComponent } from './admin/updateadmin/updateadmin.component'
 import { ManagedoctorComponent } from './admin/managedoctor/managedoctor.component';
 import { ManagetestComponent } from './admin/managetest/managetest.component';
 import { ManagespectaclesComponent } from './admin/managespectacles/managespectacles.component';
-<<<<<<< HEAD
+import { VideoconsultationComponent } from './videoconsultation/videoconsultation.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CommonModule } from '@angular/common';
-=======
-import { DoctorScheduleComponent } from './doctor/doctor-schedule/doctor-schedule.component';
-import { VideoconsultationComponent } from './videoconsultation/videoconsultation.component';
->>>>>>> 09f215b500d6b61929bb16d57b8757c19cf8122f
+import { DoctorAppointmentComponent } from './doctor/doctor-appointment/doctor-appointment.component';
+import { ViewtestComponent } from './test/viewtest/viewtest.component';
+import { HomeComponent } from './home/home.component';
+import { DoctorCreatetestComponent } from './doctor/doctor-createtest/doctor-createtest.component';
 
 
 
@@ -70,7 +68,6 @@ import { VideoconsultationComponent } from './videoconsultation/videoconsultatio
 //   {path:'view',component: ViewappointmentComponent},
 //   {path:'contact',component: ContactComponent},
   
-<<<<<<< HEAD
 //   {path:'book',component: BookappointmentComponent},
 //   {path:'cancel',component: CancelComponent},
 //   {path:'reschedule',component: RescheduleComponent},
@@ -114,41 +111,6 @@ import { VideoconsultationComponent } from './videoconsultation/videoconsultatio
 //   {path:'spectacles/delete',component: SpectaclesComponent},
 //   {path:'admin/:adminId/update',component: UpdateadminComponent},
 // ];
-=======
-  {path:'test',component: TestComponent},
-  {path:'viewreport',component:  ViewreportComponent}, 
-  {path:'docActivity',component: DoctorActivityComponent},
-  {path:'createtest',component: AddtestComponent},
-  {path:'addreport',component: AddreportComponent},
-
-  {path:'patient/:id',component: PatientComponent},
-  {path:'doctor/:id',component: DoctorComponent},
-  {path:'login',component: LoginComponent},
-  {path:'register',component: RegisterComponent},
-  {path:'forget-password',component: ForgotPasswordComponent},
-  {path:'patient/:patientId/details',component: PatientDetailsComponent},
-  {path:'patient/:patientId/details/update',component: UpdatePatientComponent},
-  {path:'report/:patientId',component: ReportComponent},
-  {path:'spectacles',component: SpectaclesComponent},
-  {path:'admin/:adminId',component: AdminComponent},
-  {path:'doctor/:doctorId/details',component: DoctordetailsComponent},
-  {path:'doctor/:doctorId/details/update',component: UpdatedoctorComponent},
-  {path:'appointment/:doctorId/view',component: ViewappointmentComponent},
-  {path:'managedoctor',component: ManagedoctorComponent},
-  {path:'test/manage',component: ManagetestComponent},
-  {path:'spectacles/manage',component: ManagespectaclesComponent},
-  {path:'adddoctor',component: AdddoctorComponent},
-  {path:'viewAlldoctor',component: DoctorScheduleComponent},
-  {path:'spectacles/add',component: AddspectaclesComponent},
-  {path:'spectacles/viewAll',component: SpectaclesComponent},
-  {path:'spectacles/update',component: UpdatespectaclesComponent},
-  {path:'spectacles/delete',component: SpectaclesComponent},
-  {path:'admin/:adminId/update',component: UpdateadminComponent},
-  {path:'VideoConsultation',component: VideoconsultationComponent},
-  {path:'test/add',component: AddtestComponent,},
-  {path:'addreport',component: AddreportComponent},
-];
->>>>>>> 09f215b500d6b61929bb16d57b8757c19cf8122f
 
 @NgModule({
   declarations: [
@@ -166,7 +128,6 @@ import { VideoconsultationComponent } from './videoconsultation/videoconsultatio
     ViewappointmentComponent,
     ContactComponent,
     BookappointmentComponent,
-    CancelComponent,
     RescheduleComponent,
     ViewreportComponent,
     AddreportComponent,
@@ -174,7 +135,6 @@ import { VideoconsultationComponent } from './videoconsultation/videoconsultatio
     TestlinkComponent,
     ReportlinkComponent,
     LoginComponent,
-    DoctorActivityComponent,
     AddtestComponent,
     UpdatetestComponent,
     RegisterComponent,
@@ -196,6 +156,10 @@ import { VideoconsultationComponent } from './videoconsultation/videoconsultatio
     ManagespectaclesComponent,
     DoctorScheduleComponent,
     VideoconsultationComponent,
+    DoctorAppointmentComponent,
+    ViewtestComponent,
+    HomeComponent,
+    DoctorCreatetestComponent,
     
   ],
   imports: [

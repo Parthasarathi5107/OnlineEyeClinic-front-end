@@ -1,11 +1,12 @@
 <div class="card-title">
-    <h2>Hi {{admin.userName}} , welcome to your portal</h2>
+    <h2>welcome to your portal</h2>
   </div>
   <table>
       <tr>
-        <td><a routerLink="/admin/{{admin.userId}}/update">Update Profile</a></td>
+        <td><a routerLink="/admin/{{adminId}}/update">Update Profile</a></td>
         <td><a routerLink="/managedoctor">Manage Doctor</a></td>
-        <td><a routerLink="/test/manage">Manage Test</a></td>
+        <td><a routerLink="/manageTest">Manage Test</a></td>
         <td><a routerLink="/spectacles/manage">Manage Spectacles</a></td>
+        
       </tr>
     </table>

@@ -1,3 +1,4 @@
+import { PatientResponse } from './../response/patient-response';
 import { PatientService } from './../service/patient.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -11,7 +12,7 @@ import { Patient } from '../details/patient';
 export class PatientComponent implements OnInit {
 
   patientId: number;
-  patient: Patient;
+  patient: PatientResponse;
 
   constructor(private route: ActivatedRoute, private patientService: PatientService, private router: Router) { }
 
@@ -19,7 +20,7 @@ export class PatientComponent implements OnInit {
 
     this.route.paramMap.subscribe(params =>
       {
-        this.patientId = +params.get("id");
+        this.patientId = +params.get("patientId");
       });
 
     this.patientService.getPatient(this.patientId).subscribe(data =>
@@ -33,11 +34,11 @@ export class PatientComponent implements OnInit {
     
     }
 
-    goDetails()
-  {
-    console.log(this.patientId)
-    this.router.navigate(['patient',this.patientId,'details']);
-  }
+  //   goDetails()
+  // {
+  //   console.log(this.patientId)
+  //   this.router.navigate(['patient',this.patientId,'details']);
+  // }
 
       
   

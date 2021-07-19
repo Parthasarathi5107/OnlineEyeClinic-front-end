@@ -1,12 +1,12 @@
 <div class="card-title">
-    <h2>Hi {{doctor.userName}} , welcome to your portal</h2>
+    <h2>Hi {{doctor?.doctorName}} , welcome to your portal</h2>
   </div>
   <table>
       <tr>
-        <td><a routerLink="/doctor/{{doctor.userId}}/details">My Account</a></td>
-        <td><a routerLink="/appointment/{{doctor.userId}}/view">Appointments</a></td>
-        <td><a routerLink="/test/add">Create a Test</a></td>
-        <td><a routerLink="/addreport">Generate Report</a></td>
+        <td><a routerLink="/doctor/{{doctor?.userId}}/details">My Account</a></td>
+        <td><a routerLink="/doctorAppointment/{{doctor?.userId}}/view">Appointments</a></td>
+        <td><a routerLink="/doctorTest/{{doctor?.userId}}">Create a Test</a></td>
+        <td><a routerLink="/doctorReport/{{doctor?.userId}}">Generate Report</a></td>
         
       </tr>
     </table>

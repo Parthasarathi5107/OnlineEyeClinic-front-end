@@ -1,8 +1,10 @@
+import { DoctorService } from 'src/app/service/doctor.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Report } from './../../details/report';
 import { ReportService } from './../../service/report.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { DoctorResponse } from 'src/app/response/doctor-response';
 
 @Component({
   selector: 'app-addreport',
@@ -16,14 +18,17 @@ export class AddreportComponent implements OnInit {
       dateOfReport :FormControl;
       descriptionOfReport :FormControl;
       visualAcuity :FormControl;
-      visualAcuityNear !:FormControl;
+      visualAcuityNear :FormControl;
       visualAcuityDistance :FormControl;
-      typeOfTest !:FormControl;
+      typeOfTest :FormControl;
       patient :FormControl;
 
   formSubmitted = false;
 
-  constructor(private reportService: ReportService, private router: Router) { }
+  doctorId: number;
+  doctor: DoctorResponse;
+
+  constructor(private reportService: ReportService, private router: Router,private route: ActivatedRoute,private doctorService: DoctorService) { }
 
   ngOnInit(): void {
 
@@ -48,7 +53,20 @@ export class AddreportComponent implements OnInit {
         
       }
     );
+
+    this.route.paramMap.subscribe(params =>
+      {
+        this.doctorId = +params.get("doctorId");
+      });
+
+    this.doctorService.getDoctor(this.doctorId).subscribe( data=>
+      {
+        console.log(data);
+        this.doctor = data;
+        console.log(this.doctor)
+      }, error => console.log(error));
   }
+  
 
   onSubmit()
   {
