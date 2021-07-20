@@ -1,13 +1,28 @@
-import { User } from './user';
-export class Admin extends User{
 
-     email !:string;
-     mobile !:string;
+export class Admin {
 
-    constructor(userId:number,password:string,userName:string,role:string,email:string,mobile:string)
-    {
-        super(userId,password,userName,role);
-        this.email = email;
-        this.mobile = mobile;
-    }
+    userId :number;
+	password :string;
+	userName :string;
+    role :string;
+     email :string;
+     mobile :string;
+
+
+  constructor(
+    userId: number, 
+    password: string, 
+    userName: string, 
+    role: string, 
+    email: string, 
+    mobile: string
+) {
+    this.userId = userId
+    this.password = password
+    this.userName = userName
+    this.role = role
+    this.email = email
+    this.mobile = mobile
+  }
+    
 }

@@ -5,7 +5,6 @@ import { Patient } from './../details/patient';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { PatientService } from '../service/patient.service';
 import { DoctorService } from '../service/doctor.service';
 
 

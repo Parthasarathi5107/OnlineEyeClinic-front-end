@@ -1,0 +1,68 @@
+
+<div class="card">
+    <div class="card-body">
+        <h4>Test Form</h4>
+        <div class="alert alert-info alert-dismissible " role="alert" *ngIf="formSubmitted">
+            <strong>Test created successfully! </strong><a routerLink="/doctor/{{doctorId}}">Go back to manage test page</a>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form [formGroup]="registerForm" novalidate >
+                    <div class="form-group">
+                        <label>Name </label>
+                        <input type="text" class="form-control" formControlName="testName" 
+                        [ngClass]="{'is-invalid':testName.errors && (testName.touched || testName.dirty), 'is-valid': testName.valid}" />
+                    </div>
+                  
+
+                    <div class="form-group">
+                        <label>Test Type</label>
+                        <input type="text" class="form-control" formControlName="testType" 
+                        [ngClass]="{'is-invalid':testType.errors && (testType.touched || testType.dirty), 'is-valid': testType.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>Test type is required.</strong>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" class="form-control" formControlName="testDescription" 
+                        [ngClass]="{'is-invalid':testDescription.errors && (testDescription.touched || testDescription.dirty), 'is-valid': testDescription.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>Description is required.</strong>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Cost</label>
+                        <input type="number" class="form-control" formControlName="testCost" 
+                        [ngClass]="{'is-invalid':testCost.errors && (testCost.touched || testCost.dirty), 'is-valid':testCost.valid}" />
+                        <div class="invalid-feedback">
+                            <strong *ngIf="testCost.errors?.required">testCost is required.</strong>
+                                <strong *ngIf="testCost.errors?.min">Enter a valid cost.</strong>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Patient Id </label>
+                        <input type="text" class="form-control" formControlName="patient" 
+                        [ngClass]="{'is-invalid':patient.errors && (patient.touched || patient.dirty), 'is-valid': patient.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>patient id is required.</strong>
+                        </div>
+                    </div>
+                   
+
+    
+                    
+                    
+                    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Add</button>
+                    <button class="btn btn-default" (click)="registerForm.reset()">Reset</button>
+                    <a routerLink="/doctor/{{doctorId}}" class="btn btn-link">Cancel</a>
+
+                </form> 
+             </div>
+        </div>
+    </div>
+</div>

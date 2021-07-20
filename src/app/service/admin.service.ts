@@ -1,5 +1,5 @@
-
 import { Admin } from './../details/admin';
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -20,6 +20,7 @@ export class AdminService {
   }
 
   updateAdmin(admin:Admin): Observable<any>{
+    admin.role="admin";
     return this.http.put(`${this.updateAdmin_endpoint}`, admin);
   }
 
@@ -27,4 +28,5 @@ export class AdminService {
     return this.http.delete(`${this.deleteAdmin_endpoint}/${id}`, { responseType: 'text' });
   }
   
+ 
 }

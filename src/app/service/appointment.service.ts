@@ -47,5 +47,4 @@ export class AppointmentService {
   viewByDateAndName(date:Date,doctorName : string):Observable<any>{
     return this.http.get(`${this.viewByDateAndName_endpoint}/${date}/${doctorName}`);
   }
-  
 }

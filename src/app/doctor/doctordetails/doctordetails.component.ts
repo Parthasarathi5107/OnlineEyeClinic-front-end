@@ -1,3 +1,4 @@
+import { DoctorResponse } from './../../response/doctor-response';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Doctor } from 'src/app/details/doctor';
@@ -11,7 +12,7 @@ import { DoctorService } from 'src/app/service/doctor.service';
 export class DoctordetailsComponent implements OnInit {
 
   doctorId: number;
-  doctor: Doctor;
+  doctor: DoctorResponse;
 
   constructor(private route: ActivatedRoute, private doctorService: DoctorService, private router: Router) { }
 
@@ -19,7 +20,7 @@ export class DoctordetailsComponent implements OnInit {
 
     this.route.paramMap.subscribe(params =>
       {
-        this.doctorId = +params.get("id");
+        this.doctorId = +params.get("doctorId");
         console.log(this.doctorId)
       });
 

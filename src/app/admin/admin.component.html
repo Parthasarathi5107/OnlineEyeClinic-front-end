@@ -1,11 +1,48 @@
 <div class="card-title">
-    <h2>Hi {{admin.userName}} , welcome to your portal</h2>
+    <h2>welcome to your portal</h2>
   </div>
   <table>
       <tr>
-        <td><a routerLink="/admin/{{admin.userId}}/update">Update Profile</a></td>
-        <td><a routerLink="/managedoctor">Manage Doctor</a></td>
-        <td><a routerLink="/test/manage">Manage Test</a></td>
-        <td><a routerLink="/spectacles/manage">Manage Spectacles</a></td>
+
+        <td>
+          <div class="card text-white bg-danger mb-3" style="width: 18rem;">
+            <img class="card-img-top" src="assets\acc.png" >
+            <div class="card-body">
+              <p class="card-text">Update Profile</p>
+              <a routerLink="/admin/{{adminId}}/update" class="btn btn-primary">Update</a>
+            </div>
+          </div>
+        </td>
+
+        <td>
+          <div class="card text-white bg-danger mb-3" style="width: 18rem;height: 26rem;">
+            <img class="card-img-top" src="assets\doc.jpg" style="height: 200%;">
+            <div class="card-body">
+              <p class="card-text">Manage Doctor</p>
+              <a routerLink="/managedoctor" class="btn btn-primary">Go To Doctor</a>
+            </div>
+          </div>
+        </td>
+
+        <td>
+          <div class="card text-white bg-danger mb-3" style="width: 18rem;height: 26rem;">
+            <img class="card-img-top" src="assets\test.jpeg" style="height: 200%;">
+            <div class="card-body">
+              <p class="card-text">Manage Test</p>
+              <a routerLink="/manageTest" class="btn btn-primary">Go To Test</a>
+            </div>
+          </div>
+        </td>
+
+        <td>
+          <div class="card text-white bg-danger mb-3" style="width: 18rem;height: 26rem;">
+            <img class="card-img-top" src="assets\spec.jpeg" style="height: 200%;">
+            <div class="card-body">
+              <p class="card-text">Manage Spectacles</p>
+              <a routerLink="/spectacles/manage" class="btn btn-primary">Go To Spectacles</a>
+            </div>
+          </div>
+        </td>
+  
       </tr>
     </table>

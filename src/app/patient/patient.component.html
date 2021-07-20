@@ -1,12 +1,53 @@
 <div class="card-title">
-  <h2>Hi {{patient.userName}} , welcome to your portal</h2>
+  <h2>Hi {{patient?.patientName}} , welcome to your portal</h2>
 </div>
 <table>
     <tr>
-      <td><a routerLink="/patient/{{patient.userId}}/details">My Account</a></td>
-      <td><a routerLink="/appointment/{{patient.userId}}">Book Appointment</a></td>
-      <td><a routerLink="/report/{{patient.userId}}">Reports</a></td>
-      <td><a routerLink="/spectacles">Spectacles</a></td>
-      <td><a routerLink="/VideoConsultation">Video Consultation App</a></td>
+      <td>
+      <!-- <td><a routerLink="/patient/{{patient?.userId}}/details">My Account</a></td> -->
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="assets\acc.png" >
+        <div class="card-body">
+          <p class="card-text">Account details</p>
+          <a routerLink="/patient/{{patient?.userId}}/details" class="btn btn-primary">View Profile</a>
+        </div>
+      </div>
+      </td>
+      <td><div class="card" style="width: 18rem;height: 25rem;">
+        <img class="card-img-top" src="assets/appoint.jpeg" >
+        <div class="card-body">
+          <p class="card-text">Appointment</p>
+          <a routerLink="/appointment/{{patient?.userId}}" class="btn btn-primary">Book</a>
+        </div>
+      </div></td>
+
+      <td><div class="card" style="width: 18rem; height: 25rem;">
+        <img class="card-img-top" src="assets/report.jpg" style="width: 100%;height: 200%;">
+        <div class="card-body">
+          <p class="card-text">Report</p>
+          <a routerLink="/report/{{patient?.userId}}" class="btn btn-primary">View Report</a>
+        </div>
+      </div></td>
+
+      <td><div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="assets/spec.jpeg" >
+        <div class="card-body">
+          <p class="card-text">Spectacles..</p>
+          <a routerLink="/spectacles" class="btn btn-primary">Spectacles</a>
+        </div>
+      </div></td>
+
+      <td><div class="card" style="width: 18rem;height: 25rem;">
+        <img class="card-img-top" src="assets/vc.jpeg"style="width: 100%;height: 200%;" >
+        <div class="card-body">
+          <p class="card-text">Video Consultation</p>
+          <a routerLink="/view" class="btn btn-primary">Start Consulting </a>
+        </div>
+      </div></td>
     </tr>
+
+      
+
+      
+    
   </table>

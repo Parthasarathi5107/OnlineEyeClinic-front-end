@@ -1,3 +1,6 @@
+import { PatientResponse } from './../response/patient-response';
+import { PatientService } from './../service/patient.service';
+import { Patient } from 'src/app/details/patient';
 import { ActivatedRoute, Router} from '@angular/router';
 import { Appointment } from './../details/appointment';
 
@@ -12,46 +15,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppointmentComponent implements OnInit {
 
-  constructor(private appointmentService:AppointmentService,private router: Router,private route:ActivatedRoute){
-    this.getAllAppointments;
-  }
+  patientId: number;
+  patient: PatientResponse;
 
-  appointment:Appointment=new Appointment();
-  appointments !:Appointment[];
+  constructor(private route: ActivatedRoute, private patientService: PatientService, private router: Router) { }
 
   ngOnInit(): void {
-    this.appointment.patient.userId = this.route.snapshot.params['id'];
-    this.appointment.doctor.userId = this.route.snapshot.params['id'];
-    this.appointment.appointmentDate=this.route.snapshot.params['date'];
-    this.appointment.appointmentTime=this.route.snapshot.params['time'];
+
+    this.route.paramMap.subscribe(params =>
+      {
+        this.patientId = +params.get("patientId");
+      });
+
+    this.patientService.getPatient(this.patientId).subscribe(data =>
+      {
+        console.log(data);
+        this.patient = data;
+        console.log(this.patient)
+      }, error => console.log(error));
+
+    
+    
+    }
+
+    goDetails()
+  {
+    console.log(this.patientId)
+    this.router.navigate(['appointment',this.patientId]);
   }
 
-  getAllAppointments()
-{
- this.appointmentService.getAllAppointments().subscribe(data=>{
-     this.appointments = data;
- },
- err=>
- {
-   console.log(err.error);
- }
- 
- ); 
-
-}
-
-onSubmit()
-{
-    this.appointmentService.bookAppointment(this.appointment).subscribe(data=>{
-    console.log(data);
-    alert("Appointment has created successfully"); 
-  },
-  error=>console.log(error));
-}
-
-goBack()
-{
-  this.route.url;
-}
+      
+  
 
 }

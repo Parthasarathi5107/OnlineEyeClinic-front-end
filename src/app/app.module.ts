@@ -18,23 +18,23 @@ import { LinkComponent } from './appointment/link/link.component';
 import { ViewappointmentComponent } from './appointment/viewappointment/viewappointment.component';
 import { ContactComponent } from './contact/contact.component';
 import { BookappointmentComponent } from './appointment/bookappointment/bookappointment.component';
-import { CancelComponent } from './appointment/cancel/cancel.component';
 import { RescheduleComponent } from './appointment/reschedule/reschedule.component';
-import { AddreportComponent } from './report/addreport/addreport.component';
 import { ViewreportComponent } from './report/viewreport/viewreport.component';
+import { AddreportComponent } from './report/addreport/addreport.component';
 import { UpdatereportComponent } from './report/updatereport/updatereport.component';
-import { TestlinkComponent } from './test/testlink/testlink.component';
 import { ReportlinkComponent } from './report/reportlink/reportlink.component';
+import { TestlinkComponent } from './test/testlink/testlink.component';
 import { LoginComponent } from './login/login.component';
-import { DoctorActivityComponent } from './doctor-activity/doctor-activity.component';
 import { AddtestComponent } from './test/addtest/addtest.component';
 import { UpdatetestComponent } from './test/updatetest/updatetest.component';
 import { RegisterComponent } from './register/register.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { DoctorScheduleComponent } from './doctor/doctor-schedule/doctor-schedule.component';
 import { PatientDetailsComponent } from './patient/patient-details/patient-details.component';
 import { UpdatePatientComponent } from './patient/patient-details/update-patient/update-patient.component';
-import { DoctordetailsComponent } from './doctor/doctordetails/doctordetails.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { UpdateappointmentComponent } from './appointment/reschedule/updateappointment/updateappointment.component';
 import { UpdatedoctorComponent } from './doctor/doctordetails/updatedoctor/updatedoctor.component';
+import { DoctordetailsComponent } from './doctor/doctordetails/doctordetails.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AddspectaclesComponent } from './spectacles/addspectacles/addspectacles.component';
 import { UpdatespectaclesComponent } from './spectacles/updatespectacles/updatespectacles.component';
@@ -44,58 +44,73 @@ import { UpdateadminComponent } from './admin/updateadmin/updateadmin.component'
 import { ManagedoctorComponent } from './admin/managedoctor/managedoctor.component';
 import { ManagetestComponent } from './admin/managetest/managetest.component';
 import { ManagespectaclesComponent } from './admin/managespectacles/managespectacles.component';
-import { DoctorScheduleComponent } from './doctor/doctor-schedule/doctor-schedule.component';
 import { VideoconsultationComponent } from './videoconsultation/videoconsultation.component';
+import { AppRoutingModule } from './app-routing.module';
+import { CommonModule } from '@angular/common';
+import { DoctorAppointmentComponent } from './doctor/doctor-appointment/doctor-appointment.component';
+import { ViewtestComponent } from './test/viewtest/viewtest.component';
+import { HomeComponent } from './home/home.component';
+import { DoctorCreatetestComponent } from './doctor/doctor-createtest/doctor-createtest.component';
 
 
 
 
 
-const appRoutes:Routes=[
 
-  {path:'',redirectTo:'login',pathMatch:'full'},
-  {path:'appointment/:id',component : AppointmentComponent},
-  {path:'report',component : ReportComponent},
-  {path:'view',component: ViewappointmentComponent},
-  {path:'contact',component: ContactComponent},
+
+
+
+// const appRoutes:Routes=[
+
+//   {path:'',redirectTo:'login',pathMatch:'full'},
+//   {path:'appointment/:patientId',component : AppointmentComponent},
+//   {path:'report/:patientid',component : ReportComponent},
+//   {path:'view',component: ViewappointmentComponent},
+//   {path:'contact',component: ContactComponent},
   
-  {path:'book',component: BookappointmentComponent},
-  {path:'cancel',component: CancelComponent},
-  {path:'reschedule',component: RescheduleComponent},
-  
-  {path:'test',component: TestComponent},
-  {path:'viewreport',component:  ViewreportComponent}, 
-  {path:'docActivity',component: DoctorActivityComponent},
-  {path:'createtest',component: AddtestComponent},
-  {path:'addreport',component: AddreportComponent},
+//   {path:'book',component: BookappointmentComponent},
+//   {path:'cancel',component: CancelComponent},
+//   {path:'reschedule',component: RescheduleComponent},
 
-  {path:'patient/:id',component: PatientComponent},
-  {path:'doctor/:id',component: DoctorComponent},
-  {path:'login',component: LoginComponent},
-  {path:'register',component: RegisterComponent},
-  {path:'forget-password',component: ForgotPasswordComponent},
-  {path:'patient/:patientId/details',component: PatientDetailsComponent},
-  {path:'patient/:patientId/details/update',component: UpdatePatientComponent},
-  {path:'report/:patientId',component: ReportComponent},
-  {path:'spectacles',component: SpectaclesComponent},
-  {path:'admin/:adminId',component: AdminComponent},
-  {path:'doctor/:doctorId/details',component: DoctordetailsComponent},
-  {path:'doctor/:doctorId/details/update',component: UpdatedoctorComponent},
-  {path:'appointment/:doctorId/view',component: ViewappointmentComponent},
-  {path:'managedoctor',component: ManagedoctorComponent},
-  {path:'test/manage',component: ManagetestComponent},
-  {path:'spectacles/manage',component: ManagespectaclesComponent},
-  {path:'adddoctor',component: AdddoctorComponent},
-  {path:'viewAlldoctor',component: DoctorScheduleComponent},
-  {path:'spectacles/add',component: AddspectaclesComponent},
-  {path:'spectacles/viewAll',component: SpectaclesComponent},
-  {path:'spectacles/update',component: UpdatespectaclesComponent},
-  {path:'spectacles/delete',component: SpectaclesComponent},
-  {path:'admin/:adminId/update',component: UpdateadminComponent},
-  {path:'VideoConsultation',component: VideoconsultationComponent},
-  {path:'test/add',component: AddtestComponent,},
-  {path:'addreport',component: AddreportComponent},
-];
+
+//   {path:'test',component: TestComponent},
+//   {path:'viewreport',component:  ViewreportComponent}, 
+//   {path:'docActivity',component: DoctorActivityComponent},
+//   {path:'createtest',component: AddtestComponent},
+//   {path:'report/:patientId',component: AddreportComponent},
+//   {path:'login',component:LoginComponent},
+//   {path:'patient/:id',component: PatientComponent},
+//   {path:'doctor/:id',component: DoctorComponent},
+//   {path:'login',component: LoginComponent},
+//   {path:'register',component: RegisterComponent},
+//   {path:'forget-password',component: ForgotPasswordComponent},
+//   {path:'schedule',component: DoctorScheduleComponent},
+//   {path:'patient/:patientId/details',component: PatientDetailsComponent},
+//   {path:'patient/:patientId/details/update',component: UpdatePatientComponent},
+
+//   {path:'patient/:patientId',component: TestComponent},
+//   {path:'appointment/:appointmentId/details',component: RescheduleComponent},
+//   {path:'appointment/:appointmentId/details/update',component: UpdateappointmentComponent},
+//   {path:'appointment/:patientId',component: BookappointmentComponent},
+//   {path:'report/:patientId',component: ReportComponent},
+//   {path:'spectacles',component: SpectaclesComponent},
+//   {path:'admin/:adminId',component: AdminComponent},
+//   {path:'doctor/:doctorId/details',component: DoctordetailsComponent},
+//   {path:'doctor/:doctorId/details/update',component: UpdatedoctorComponent},
+//   {path:'appointment/:doctorId/view',component: ViewappointmentComponent},
+//   {path:'report/:reportId/details',component: UpdatereportComponent},
+
+//   {path:'managedoctor',component: ManagedoctorComponent},
+//   {path:'test/manage',component: ManagetestComponent},
+//   {path:'spectacles/manage',component: ManagespectaclesComponent},
+//   {path:'adddoctor',component: AdddoctorComponent},
+//   {path:'viewAlldoctor',component: DoctorScheduleComponent},
+//   {path:'spectacles/add',component: AddspectaclesComponent},
+//   {path:'spectacles/viewAll',component: SpectaclesComponent},
+//   {path:'spectacles/update',component: UpdatespectaclesComponent},
+//   {path:'spectacles/delete',component: SpectaclesComponent},
+//   {path:'admin/:adminId/update',component: UpdateadminComponent},
+// ];
 
 @NgModule({
   declarations: [
@@ -113,21 +128,21 @@ const appRoutes:Routes=[
     ViewappointmentComponent,
     ContactComponent,
     BookappointmentComponent,
-    CancelComponent,
     RescheduleComponent,
-    AddreportComponent,
     ViewreportComponent,
+    AddreportComponent,
     UpdatereportComponent,
     TestlinkComponent,
     ReportlinkComponent,
     LoginComponent,
-    DoctorActivityComponent,
     AddtestComponent,
     UpdatetestComponent,
     RegisterComponent,
     ForgotPasswordComponent,
+    DoctorScheduleComponent,
     PatientDetailsComponent,
     UpdatePatientComponent,
+    UpdateappointmentComponent,
     DoctordetailsComponent,
     UpdatedoctorComponent,
     LogoutComponent,
@@ -141,14 +156,21 @@ const appRoutes:Routes=[
     ManagespectaclesComponent,
     DoctorScheduleComponent,
     VideoconsultationComponent,
+    DoctorAppointmentComponent,
+    ViewtestComponent,
+    HomeComponent,
+    DoctorCreatetestComponent,
     
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    // RouterModule.forRoot(appRoutes),
+    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

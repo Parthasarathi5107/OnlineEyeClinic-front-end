@@ -18,7 +18,7 @@ export class UpdatespectaclesComponent implements OnInit {
   spectaclesDescription: FormControl;
   spectaclesRating: FormControl;
   spectaclesCost: FormControl;
-  
+
 
   formSubmitted = false;
 
@@ -31,7 +31,7 @@ export class UpdatespectaclesComponent implements OnInit {
     this.spectaclesDescription = new FormControl('', [Validators.required]);
     this.spectaclesRating = new FormControl('', [Validators.required, Validators.min(1), Validators.max(5)]);
     this.spectaclesCost = new FormControl('', [Validators.required, Validators.min(1000)]);
-    
+
 
     this.registerForm = new FormGroup(
       {
@@ -40,7 +40,7 @@ export class UpdatespectaclesComponent implements OnInit {
         'spectaclesDescription': this.spectaclesDescription,
         'spectaclesRating': this.spectaclesRating,
         'spectaclesCost': this.spectaclesCost,
-        
+
       }
     );
   }

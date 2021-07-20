@@ -1,4 +1,4 @@
-
+import { AdminResponse } from './../response/admin-response';
 import { AdminService } from './../service/admin.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -12,7 +12,7 @@ import { Admin } from '../details/admin';
 export class AdminComponent implements OnInit {
 
   adminId: number;
-  admin: Admin;
+  admin: AdminResponse;
 
   constructor(private route: ActivatedRoute, private adminService: AdminService, private router: Router) { }
 
@@ -20,13 +20,9 @@ export class AdminComponent implements OnInit {
 
     this.route.paramMap.subscribe(params =>
       {
-        this.adminId = +params.get("id");
+        this.adminId = +params.get("adminId");
       });}
 
-
-      goUpdate()
-      {
-        this.router.navigate(['admin',this.adminId,'details','update']);
-      }
+   
 
 }

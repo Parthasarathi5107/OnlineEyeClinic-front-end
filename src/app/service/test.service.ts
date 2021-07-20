@@ -1,3 +1,4 @@
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -8,7 +9,6 @@ import { Test } from '../details/test';
 })
 export class TestService {
 
-  
   constructor(private http: HttpClient) { }
 
   private baseUrl = 'http://localhost:9999/test';
@@ -26,6 +26,7 @@ export class TestService {
 updateTest(test: Test): Observable<any>
 {
 return this.http.put(`${this.updateTest_endpoint}`, test);
+
 }
 
 deleteTest(id:number):Observable<any>{
@@ -39,4 +40,7 @@ return this.http.get(`${this.viewTestById_endpoint}/${id}`);
 viewTest():Observable<any>{
 return this.http.get(`${this.viewTest_endpoint}`);
 }
+
 }
+
+

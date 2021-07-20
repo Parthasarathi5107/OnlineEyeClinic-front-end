@@ -10,9 +10,9 @@ import { Observable } from 'rxjs';
 export class PatientService {
   private baseUrl = 'http://localhost:9999/patient';
   private addPatient_endpoint = this.baseUrl+'/add';
+  private updatePatient_endpoint = this.baseUrl+'/update';
   private viewAllPatients_endpoint = this.baseUrl+'/viewAll';
   private viewById_endpoint = this.baseUrl+'/view';
-  private update_endpoint = this.baseUrl+'/update';
   private viewByNameAndEmail_endpoint = this.baseUrl+'/viewByName';
   
 
@@ -36,12 +36,13 @@ export class PatientService {
 
   updatePatient(patient:Patient): Observable<any>
   {
-    return this.http.put(`${this.update_endpoint}`, patient);
+    patient.role="patient";
+    return this.http.put(`${this.updatePatient_endpoint}`, patient);
   }
-
+  
   getPatientByUsernameAndEmail(patientName: string, patientEmail: string): Observable<any>
   {
-    return this.http.get(`${this.baseUrl}/${patientName}/${patientEmail}`);
+    return this.http.get(`${this.viewByNameAndEmail_endpoint}/${patientName}/${patientEmail}`);
   }
   
 }

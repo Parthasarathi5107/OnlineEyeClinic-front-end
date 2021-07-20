@@ -1,1 +1,72 @@
-<p>deletespectacles works!</p>
+<table>
+    <tr>
+        <th></th>
+        <th>id</th>
+        <th>model</th>
+        <th>Description</th>
+        <th>Rating</th>
+        <th>Cost</th>
+        
+    </tr>
+    <tr *ngFor="let spec of allSpecs">
+        <td><img src="assets\download.png" width="100"></td>
+    <td>{{spec.spectaclesId}}</td>
+    <td>{{spec.spectaclesModel}}</td>
+    <td>{{spec.spectaclesDescription}}</td>
+    <td>{{spec.spectaclesRating}}</td>
+    <td>{{spec.spectaclesCost|currency:"INR":"symbol"}}</td>
+</tr>
+</table>
+
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <form [formGroup]="registerForm" novalidate >
+                    <div class="form-group">
+                        <label>Spectacles Id </label>
+                        <input type="text" class="form-control" formControlName="spectaclesId" 
+                        [ngClass]="{'is-invalid':spectaclesId.errors && (spectaclesId.touched || spectaclesId.dirty), 'is-valid': spectaclesId.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>>spectacles Id is required.</strong>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Search</button>
+                </form> 
+            </div>
+       </div>
+   </div>
+</div>
+
+<div class="card">
+    <div class="card-title">
+        <h4>Spectacles Details</h4>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Spectacles Id</th>
+                    <td>{{specs?.spectaclesId}}</td>
+                </tr>
+                <tr>
+                    <th>Model</th>
+                    <td>{{specs?.spectaclesModel}}</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>{{specs?.spectaclesDescription}}</td>
+                </tr>
+                <tr>
+                    <th>Rating</th>
+                    <td>{{specs?.spectaclesRating}}</td>
+                </tr>
+               <tr>
+                    <th>Cost</th>
+                    <td>{{specs?.spectaclesCost}}</td>
+                </tr>
+                
+            </tbody>
+        </table>
+
+        <button type="button" class="btn btn-primary" (click)="delete()">Delete</button>

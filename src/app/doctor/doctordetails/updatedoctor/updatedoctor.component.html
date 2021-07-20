@@ -1,43 +1,86 @@
 <div class="card">
-    <div class="card-title">
-        <h4>Update your details</h4>
-    </div>
     <div class="card-body">
-        <form novalidate #updateForm="ngForm">
-            <div class="form-group">
-                <label>Name: </label>
-                <input type="text" class="form-control" value="{{doctor.userName}}"
-                [(ngModel)]= "doctor.userName" name="userName" />
-            </div>
-            <div class="form-group">
-                <label>Password: </label>
-                <input type="text" class="form-control" value="{{doctor.password}}"
-                [(ngModel)]= "doctor.password" name="password" />
-            </div>
-            
-            <div class="form-group">
-                <label>doctor Consultation Time: </label>
-                <input type="number" class="form-control" value="{{doctor.doctorConsultationTime}}"
-                [(ngModel)]= "doctor.doctorConsultationTime" name="doctorConsultationTime" />
-            </div>
-            <div class="form-group">
-                <label>Mobile Number: </label>
-                <input type="text" class="form-control" value="{{doctor.doctorMobile}}"
-                [(ngModel)]= "doctor.doctorMobile" name="doctorMobile" />
-            </div>
-            <div class="form-group">
-                <label>Email: </label>
-                <input type="text" class="form-control" value="{{doctor.doctorEmail}}"
-                [(ngModel)]= "doctor.doctorEmail" name="doctorEmail" />
-            </div>
-            <div class="form-group">
-                <label>Address: </label>
-                <input type="text" class="form-control" value="{{doctor.address}}"
-                [(ngModel)]= "doctor.address" name="address" />
-            </div>
-        </form>
+        <h4>Update your details</h4>
+        <div class="alert alert-info alert-dismissible " role="alert" *ngIf="formSubmitted">
+            <strong>Updated  details successfully! </strong><a routerLink="/doctor/{{doctorId}}/details">Go back to my account page</a>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form [formGroup]="registerForm" novalidate >
+
+                    <!-- <div class="form-group">
+                        <label> Doctor Id</label>
+                        <input type="number" class="form-control" formControlName="userId" 
+                        [ngClass]="{'is-invalid':userId?.errors && (userId?.touched || userId?.dirty), 'is-valid': userId?.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>Doctor Id is required.</strong>
+                        </div>
+                    </div> -->
+                    <div class="form-group">
+                        <label> Name</label>
+                        <input type="text" class="form-control" formControlName="userName" 
+                        [ngClass]="{'is-invalid':userName?.errors && (userName?.touched || userName?.dirty), 'is-valid': userName?.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>Name is required.</strong>
+                        </div>
+                    <div class="form-group">
+                        <label>Password </label>
+                        <input type="text" class="form-control" formControlName="password" 
+                        [ngClass]="{'is-invalid':password.errors && (password.touched || password.dirty), 'is-valid': password.valid}" />
+                        <div class="invalid-feedback">
+                            <strong *ngIf="password.errors?.required">password is required.</strong>
+                        </div>
+                    </div>
+                  
+                    
+                    </div>
+                    <div class="form-group">
+                        <label>Consultation Time </label>
+                        <input type="time" class="form-control" formControlName="doctorConsultationTime" 
+                        [ngClass]="{'is-invalid':doctorConsultationTime.errors && (doctorConsultationTime.touched || doctorConsultationTime.dirty), 'is-valid':doctorConsultationTime.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>ConsultationTime is required.</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Mobile Number </label>
+                        <input type="number" class="form-control" formControlName="doctorMobile" 
+                        [ngClass]="{'is-invalid':doctorMobile.errors && (doctorMobile.touched || doctorMobile.dirty), 'is-valid': doctorMobile.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>Mobile Number is required.</strong>
+                        </div>
+                    </div>
+                        
+                    
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" formControlName="doctorEmail" 
+                        [ngClass]="{'is-invalid':doctorEmail.errors && (doctorEmail.touched || doctorEmail.dirty), 'is-valid':doctorEmail.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>Email is required.</strong>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" class="form-control" formControlName="address" 
+                        [ngClass]="{'is-invalid':address.errors && (address.touched || address.dirty), 'is-valid': address.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>address is required.</strong>
+                        </div>
+                    </div>
+                    
+                    
+                    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Confirm</button>
+                    <button class="btn btn-default" (click)="registerForm.reset()">Reset</button>
+                    <a routerLink="/doctor/{{doctorId}}/details" class="btn btn-link">Cancel</a>
+
+                </form> 
+             </div>
+        </div>
     </div>
 </div>
-<button type="button" class="btn btn-primary" (click)="update()">Confirm</button>
-
-<button type="button" class="btn btn-primary" (click)="back()">Cancel</button>

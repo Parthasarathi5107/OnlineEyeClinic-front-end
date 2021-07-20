@@ -1,3 +1,4 @@
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -17,6 +18,9 @@ export class ReportService {
   private viewByDate_endpoint = this.baseUrl+'/viewByDate';
   private viewSpectacles_endpoint = this.baseUrl+'/spectacles';
 
+  private viewReportByPatientId_endpoint = this.baseUrl+'/viewById';
+
+
   addReport(report: Report): Observable<any>
     {
       return this.http.post(`${this.addReport_endpoint}`, report);
@@ -35,6 +39,10 @@ export class ReportService {
     return this.http.get(`${this.viewReportById_endpoint}/${rid}/${pid}`);
   }
 
+  viewReportByPatientId(pid:number):Observable<any>{
+    return this.http.get(`${this.viewReportByPatientId_endpoint}/${pid}`);
+  }
+
   viewReportByDate(date:Date):Observable<any>{
     return this.http.get(`${this.viewByDate_endpoint}/${date}`);
   }
@@ -43,3 +51,5 @@ export class ReportService {
     return this.http.get(`${this.viewSpectacles_endpoint}`);
   }
 }
+
+

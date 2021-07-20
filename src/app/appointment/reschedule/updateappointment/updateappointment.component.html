@@ -1,0 +1,58 @@
+
+<div class="card">
+    <div class="card-body">
+        <h4>Reschedule Appointment</h4>
+        <div class="alert alert-info alert-dismissible " role="alert" *ngIf="formSubmitted">
+            <strong>Appointment updated successfully! </strong><a routerLink="/appointment/{{patientId}}/reschedule">Go back to manage appointment page</a>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form [formGroup]="registerForm" novalidate >
+
+                        <div class="form-group">
+                            <label>Appointment Id </label>
+                            <input type="number" class="form-control" formControlName="appointmentId" 
+                        [ngClass]="{'is-invalid':appointmentId?.errors && (appointmentId?.touched || appointmentId?.dirty), 'is-valid':appointmentId?.valid}" />
+                          <div class="invalid-feedback">
+                            <strong>appointment Id is required.</strong>
+                          </div>
+                        </div>
+
+                    <div class="form-group">
+                        <label>Date </label>
+                        <input type="date" class="form-control" formControlName="appointmentDate" 
+                        [ngClass]="{'is-invalid':appointmentDate.errors && (appointmentDate.touched || appointmentDate.dirty)}" />
+                    </div>
+                  
+
+                    <div class="form-group">
+                        <label>Time</label>
+                        <input type="time" class="form-control" formControlName="appointmentTime" 
+                        [ngClass]="{'is-invalid':appointmentTime.errors && (appointmentTime.touched || appointmentTime.dirty)}" />
+                        <div class="invalid-feedback">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Doctor ID</label>
+                        <input type="text" class="form-control" formControlName="doctor" 
+                        [ngClass]="{'is-invalid':doctor.errors && (doctor.touched || doctor.dirty), 'is-valid': doctor.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>doctor Id is required.</strong>
+                        </div>
+                    </div>
+
+                    
+                    
+                    
+                    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Confirm</button>
+                    <button class="btn btn-default" (click)="registerForm.reset()">Reset</button>
+                    <a routerLink="/appointment/{{patientId}}/reschedule" class="btn btn-link">Cancel</a>
+
+                </form> 
+             </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,7 +1,42 @@
 
 <table>
-    <tr class="nav-link" routerLink="/book">Book Appointment</tr>
-    <tr class="nav-link" routerLink="/view">View Appointment</tr>
-    <tr class="nav-link" routerLink="/cancel">Cancel Appointment</tr>
-    <tr class="nav-link" routerLink="/reschedule">Reschedule Appointment</tr>
+    <tr>
+        <td>
+            <div class="row"></div>
+            <div class="card text-white bg-danger mb-3" style="width: 18rem;height: 26rem;">
+            <img class="card-img-top" src="assets/appoint.jpeg" >
+            <div class="card-body">
+              <p class="card-text">Book Appointment</p>
+              <a routerLink="/appointment/{{patient?.userId}}/book" class="btn btn-primary">Book</a>
+            </div>
+          </div></td>
+
+          <td><div class="card text-white bg-danger mb-3" style="width: 18rem;;">
+            <img class="card-img-top" src="assets/appoint.jpeg" >
+            <div class="card-body">
+              <p class="card-text">View Your Appointment</p>
+              <a routerLink="/appointment/{{patient?.userId}}/view" class="btn btn-primary">View Appointment</a>
+            </div>
+          </div></td>
+
+          <td><div class="card text-white bg-danger mb-3" style="width: 18rem;;">
+            <img class="card-img-top" src="assets/appoint.jpeg" >
+            <div class="card-body">
+              <p class="card-text">Reschedule Your Appointment</p>
+              <a routerLink="/appointment/{{patient?.userId}}/reschedule" class="btn btn-primary">Reschedule Appointment</a>
+            </div>
+          </div></td>
+
+          <!-- <td><div class="card" style="width: 18rem;;">
+            <img class="card-img-top" src="assets/appoint.jpeg" >
+            <div class="card-body">
+              <p class="card-text">Book Appointment to consult doctor</p>
+              <a routerLink="/appointment/{{patient?.userId}}/book" class="btn btn-primary">Reschedule Appointment</a>
+            </div>
+          </div></td> -->
+    </tr>
+    <!-- <tr class="nav-link" routerLink="/appointment/{{patient?.userId}}/book">Book Appointment</tr>
+    <tr class="nav-link" routerLink="/appointment/{{patient?.userId}}/view">View Appointment</tr>
+    <tr class="nav-link" routerLink="/appointment/{{patient?.userId}}/reschedule">Reschedule Appointment</tr> -->
+    <tr class="btn btn-default" style="color: blue;" routerLink="/patient/{{patient?.userId}}">Back</tr>
 </table>
