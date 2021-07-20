@@ -33,11 +33,7 @@ export class SpectaclesComponent implements OnInit {
   //       });
   //     }
     
-<<<<<<< HEAD
-  buy()
-=======
   Buy()
->>>>>>> b37d529eb71586b355ea9234ca4bef945061d569
   {
     alert("Added to cart...");
   }
