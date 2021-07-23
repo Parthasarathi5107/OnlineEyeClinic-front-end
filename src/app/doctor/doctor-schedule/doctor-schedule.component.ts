@@ -12,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoctorScheduleComponent implements OnInit {
 
-  constructor(private doctorService : DoctorService,private route: ActivatedRoute, private router: Router) {
+  constructor(private doctorService : DoctorService) {
     
    }
  doctor:DoctorResponse[]=[];

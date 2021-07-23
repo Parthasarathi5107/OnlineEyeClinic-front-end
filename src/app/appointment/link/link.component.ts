@@ -19,10 +19,10 @@ export class LinkComponent implements OnInit {
 
     this.route.paramMap.subscribe(params =>
       {
-        this.patientId = +params.get("id");
+        this.patientId = +params.get("patientId");
       });
 
-    this.patientService.getPatient(42).subscribe(data =>
+    this.patientService.getPatient(this.patientId).subscribe(data =>
       {
         console.log(data);
         this.patient = data;

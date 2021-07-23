@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { Doctor } from 'src/app/details/doctor';
 import { DoctorService } from 'src/app/service/doctor.service';
 
@@ -28,7 +27,7 @@ export class AdddoctorComponent implements OnInit {
   formSubmitted = false;
 
 
-  constructor(private router: Router,private doctorService:DoctorService) { }
+  constructor(private doctorService:DoctorService) { }
 
   ngOnInit(): void {
 

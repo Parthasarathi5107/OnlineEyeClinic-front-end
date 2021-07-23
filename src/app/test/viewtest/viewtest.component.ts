@@ -10,7 +10,7 @@ import { TestService } from 'src/app/service/test.service';
 })
 export class ViewtestComponent implements OnInit {
 
-  constructor(private testService : TestService,private route: ActivatedRoute, private router: Router) {
+  constructor(private testService : TestService) {
     
   }
 

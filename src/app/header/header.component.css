@@ -1,5 +1,22 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #1f1e1e;
+}
+
+li a {
+  display: block;
+  color: rgb(223, 221, 231);
+  padding: 8px 16px;
+  width: 100px;
+  text-decoration: none;
+}
 
 
-  
-  /* Bottom right text */
+li a:hover:not(.active) {
+  background-color: rgb(221, 55, 64);
+  color: rgb(235, 235, 235);
+}
   

@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
 
   formSubmitted = false;
 
-  constructor(private patientService: PatientService, private router: Router) { }
+  constructor(private patientService: PatientService) { }
 
   ngOnInit(): void {
 

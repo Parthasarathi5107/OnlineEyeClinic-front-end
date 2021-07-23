@@ -12,6 +12,9 @@
                         <label>Name </label>
                         <input type="text" class="form-control" formControlName="testName" 
                         [ngClass]="{'is-invalid':testName.errors && (testName.touched || testName.dirty), 'is-valid': testName.valid}" />
+                        <div class="invalid-feedback">
+                            <strong>Test Name is required.</strong>
+                        </div>
                     </div>
                   
 
